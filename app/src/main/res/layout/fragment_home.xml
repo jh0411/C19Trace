@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/iv_homeNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_baseline_notifications_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/iv_homeMainImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/home_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_homeWhiteBottom"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:src="@drawable/white_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_homeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Welcome Back!"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_homeWhiteBottom" />
+
+    <ImageView
+        android:id="@+id/iv_homeStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/home_statistics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTitle" />
+
+    <ImageView
+        android:id="@+id/iv_homeInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/home_info"
+        app:layout_constraintEnd_toStartOf="@+id/iv_homeSop"
+        app:layout_constraintStart_toEndOf="@+id/iv_homeStats"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTitle" />
+
+    <ImageView
+        android:id="@+id/iv_homeSop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/home_sop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeTitle" />
+
+    <ImageView
+        android:id="@+id/iv_homePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/home_emergency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeStats" />
+
+    <ImageView
+        android:id="@+id/iv_homeVaccine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/home_vaccination"
+        app:layout_constraintEnd_toStartOf="@+id/iv_homeTest"
+        app:layout_constraintStart_toEndOf="@+id/iv_homePhone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeInfo" />
+
+    <ImageView
+        android:id="@+id/iv_homeTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/home_test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeSop" />
+
+    <TextView
+        android:id="@+id/tv_homeStats"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Statistics"
+        android:textAlignment="center"
+        android:fontFamily="@font/dmsans_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeStats" />
+
+    <TextView
+        android:id="@+id/tv_homeInfo"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Info Hub"
+        android:textAlignment="center"
+        android:fontFamily="@font/dmsans_medium"
+        app:layout_constraintEnd_toStartOf="@+id/tv_homeSop"
+        app:layout_constraintStart_toEndOf="@+id/tv_homeStats"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeInfo" />
+
+    <TextView
+        android:id="@+id/tv_homeSop"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="SOP"
+        android:textAlignment="center"
+        android:fontFamily="@font/dmsans_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeSop" />
+
+    <TextView
+        android:id="@+id/tv_homePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dmsans_medium"
+        android:text="Emergency\nHotline"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homePhone" />
+
+    <TextView
+        android:id="@+id/tv_homeVaccine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dmsans_medium"
+        android:text="Vaccination\nStatus"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/tv_homeTest"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toEndOf="@+id/tv_homePhone"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeVaccine" />
+
+    <TextView
+        android:id="@+id/tv_homeTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="34dp"
+        android:fontFamily="@font/dmsans_medium"
+        android:text="Symptoms\nTest"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeTest" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

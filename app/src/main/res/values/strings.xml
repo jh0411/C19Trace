@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">C19Trace</string>
+
+    <string name="forgot_pass"><u>Forgot password?</u></string>
+
+    <string name="sign_up"><u>Don’t have an account? <b>SIGN UP</b></u></string>
+
+    <string name="sign_in_acc"><u><b>SIGN IN</b> to my account</u></string>
+
+    <string name="forgot_pass_desc">Enter your email address you’re using\nfor your account and we will send you a\npassword reset code</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/menu_hotspot"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="Hotspot"/>
+
+    <item
+        android:id="@+id/menu_checkIn"
+        android:icon="@drawable/ic_baseline_qr_code_24"
+        android:title="Check In"/>
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"/>
+</menu>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckInFragment"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_checkInWhiteBox"
+            android:layout_width="1080px"
+            android:layout_height="500dp"
+            android:src="@drawable/white_bottom"
+            app:layout_constraintTop_toBottomOf="@id/btn_checkIn"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_checkInPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/scan_qr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_checkInBell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/noti_bell"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_checkIn"
+            android:layout_width="230dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Check In"
+            android:textAllCaps="false"
+            android:textColor="#1AA7EC"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_checkInPicture" />
+
+        <TextView
+            android:id="@+id/tv_checkInHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Check In History"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_checkInWhiteBox" />
+
+        <RelativeLayout
+            android:id="@+id/checkInRelative1"
+            android:layout_width="340dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_checkInHistory">
+
+            <ImageView
+                android:id="@+id/iv_relative1Tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/check_box" />
+
+            <TextView
+                android:id="@+id/tv_checkInLocation1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative1Tick"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="The Suburban Food Sdn Bhd"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_checkInDateTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_checkInLocation1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative1Tick"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="MAR 23, 2022 | 5:00PM"
+                android:textColor="#1E2F97" />
+
+        </RelativeLayout>
+
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/iv_checkInBox1"-->
+        <!--        android:layout_width="340dp"-->
+        <!--        android:layout_height="70dp"-->
+        <!--        android:src="@drawable/custom_input"-->
+        <!--        tools:layout_editor_absoluteX="55dp"-->
+        <!--        tools:layout_editor_absoluteY="392dp" />-->
+
+        <RelativeLayout
+            android:id="@+id/checkInRelative2"
+            android:layout_width="340dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkInRelative1">
+
+            <ImageView
+                android:id="@+id/iv_relative2Tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/check_box" />
+
+            <TextView
+                android:id="@+id/tv_checkInLocation2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative2Tick"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="Alexis Bistro - Telawi"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_checkInDateTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_checkInLocation2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative2Tick"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="MAR 23, 2022 | 2:32PM"
+                android:textColor="#1E2F97" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/iv_checkInBox3"
+            android:layout_width="340dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkInRelative2">
+
+            <ImageView
+                android:id="@+id/iv_relative3Tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/check_box" />
+
+
+            <TextView
+                android:id="@+id/tv_checkInLocation3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative3Tick"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="Mitsui Shopping Park Lalaport"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_checkInDateTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_checkInLocation3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative3Tick"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="MAR 23, 2022 | 11:43AM"
+                android:textColor="#1E2F97" />
+
+        </RelativeLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

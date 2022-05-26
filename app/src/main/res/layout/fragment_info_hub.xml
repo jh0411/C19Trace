@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoHubFragment"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_covidNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Covid-19 News"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_covidMainImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/news_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_covidNews" />
+
+        <ImageView
+            android:id="@+id/iv_newsWhite"
+            android:layout_width="1080px"
+            android:layout_height="900dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/white_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_covidMainImage" />
+
+        <RelativeLayout
+            android:id="@+id/relative1"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_newsWhite">
+
+            <ImageView
+                android:id="@+id/cover_image1"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/news_one" />
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/cover_image1"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="KJ: Fully-vaccinated Malaysia-Singapore land travellers exempted from Covid-19 test, quarantine"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/sub1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title1"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cover_image1"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="Updated March 24, 2022 @ 8:03pm"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative2"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative1">
+
+            <ImageView
+                android:id="@+id/cover_image2"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/news_two" />
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/cover_image2"
+                android:text="Covid-19: Malaysia to seek clarification from EU over non-recognition of Sinovac vaccine, says KJ"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/sub2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title2"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cover_image2"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="Updated March 24, 2022 @ 10:43pm"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative3"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative2">
+
+            <ImageView
+                android:id="@+id/cover_image3"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/news_three" />
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@+id/cover_image3"
+                android:text="64 Covid-19 deaths, new cases rise to 24,316"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/sub3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title3"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cover_image3"
+                android:text="Updated March 25, 2022 @ 7:16am"
+                android:fontFamily="@font/dmsans_regular"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative4"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative3">
+
+            <ImageView
+                android:id="@+id/cover_image4"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/news_four" />
+
+            <TextView
+                android:id="@+id/title4"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/cover_image4"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="Covid-19 vaccination: 36% of Malaysian children given first jab as of March 23"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/sub4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title4"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cover_image4"
+                android:text="Updated March 24, 2022 @ 12:19pm"
+                android:fontFamily="@font/dmsans_regular"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative5"
+            android:layout_width="344dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative4">
+
+            <ImageView
+                android:id="@+id/cover_image5"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/news_five" />
+
+            <TextView
+                android:id="@+id/title5"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/cover_image5"
+                android:text="AirAsia reminds guests to adhere to SOP for international travellers when Malaysia reopens"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/sub5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title5"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/cover_image5"
+                android:text="Updated March 25, 2022 @ 10:11pm"
+                android:fontFamily="@font/dmsans_regular"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_infoNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_notifications_24"
+            app:tint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
