@@ -1,13 +1,19 @@
 package com.example.c19trace;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import static android.Manifest.permission.CAMERA;
 
 public class CheckInFragment extends Fragment {
 
@@ -34,6 +40,25 @@ public class CheckInFragment extends Fragment {
                 bundle.putString("checkInFeatures", "notifications");
                 next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+            }
+        });
+
+        Button button = view.findViewById(R.id.btn_checkIn);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(Intent.ACTION_CALL);
+//                if(ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), CAMERA) == PackageManager.PERMISSION_GRANTED){
+//                    startActivity(intent);
+//                }
+//                else{
+//                    requestPermissions(new String[]{CAMERA},1);
+//                }
+
+                Intent intent = new Intent(getActivity(), QrScannerActivity.class);
+                startActivity(intent);
+
             }
         });
     }
