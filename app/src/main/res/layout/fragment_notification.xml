@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_notificationTitle1"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
             android:fontFamily="@font/dmsans_regular"
             android:text="Do remember to update your app to the latest version to access the latest features from Google Play Store today!"
             android:textSize="12sp" />

@@ -3,26 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_check_in_success.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_forgot_password.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_navigation.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_news1.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_news2.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_news3.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_news4.xml" value="0.16145833333333334" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_news5.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_sign_in.xml" value="0.16666666666666666" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_sop.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/faq_setup.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_change_password.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_check_in.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_faq.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_info_hub.xml" value="0.17552083333333332" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_notification.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.17552083333333332" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/drawable/blue_button.xml" value="0.2945" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/drawable/button_box.xml" value="0.3205" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/drawable/container.xml" value="0.176" />
@@ -58,6 +38,7 @@
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test_result.xml" value="0.22" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_vaccination.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/menu/bottomnavigation.xml" value="0.36666666666666664" />
       </map>
     </option>

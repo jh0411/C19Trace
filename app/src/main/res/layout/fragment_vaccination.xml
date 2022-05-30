@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VaccinationFragment"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/tv_vaccination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Vaccination Status"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_vaccinationPic"
+        android:layout_width="296dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/vaccination_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vaccination" />
+
+    <ImageView
+        android:id="@+id/iv_vaccinationWhiteBox"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:src="@drawable/white_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/vaccinationRelative1"
+        android:layout_width="340dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_vaccinationWhiteBox">>
+
+        <TextView
+            android:id="@+id/tv_vaccinationTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="COVID-19 Vaccine (Dose 1)"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationDose1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationTitle1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Pfizer–BioNTech"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationLocation1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationDose1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Date: 16 July 2021 6:06PM \nFacility: MMU Cyberjaya, HCO A"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="340dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        app:layout_constraintEnd_toEndOf="@+id/iv_vaccinationWhiteBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinationRelative1">
+
+        <TextView
+            android:id="@+id/tv_vaccinationTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="COVID-19 Vaccine (Dose 2)"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationDose2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationTitle2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Pfizer–BioNTech"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationLocation2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationDose2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Date: 6 August 2021 5:27PM \nFacility: MMU Cyberjaya, HCO A"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/tv_vaccinationTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Booster Dose"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationDose3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationTitle3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Pfizer–BioNTech"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_vaccinationLocation3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vaccinationDose3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Date: 4 February 2022 2:56PM \nFacility: Klinik Bukit Katil 24 Jam"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
