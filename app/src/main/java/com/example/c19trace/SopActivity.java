@@ -28,14 +28,20 @@ public class SopActivity extends AppCompatActivity {
             }
         });
 
-        String pdf = "https://asset.mkn.gov.my/web/wp-content/uploads/sites/3/2019/08/MKN-SOP_ReopeningSafely_vF-ENG_Clean-1.pdf";
-        sopView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
-
         WebSettings webSettings = sopView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        sopView.clearCache(true);
-        sopView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
+        String pdf = "https://asset.mkn.gov.my/web/wp-content/uploads/sites/3/2019/08/MKN-SOP_ReopeningSafely_vF-ENG_Clean-1.pdf";
+        sopView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdf);
+
+
+        if (sopView.getTitle().equals("")) {
+            sopView.reload();
+
+        }
+//
+//        sopView.clearCache(true);
+//        sopView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
     }
 
     @Override

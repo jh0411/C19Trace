@@ -84,5 +84,16 @@ public class HomeFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
+
+        view.findViewById(R.id.iv_homeVaccine).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment next_fragment = new VaccinationFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("homeFeatures", "vaccination");
+                next_fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+            }
+        });
     }
 }
