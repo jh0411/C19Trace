@@ -37,6 +37,10 @@ public class NavigationActivity extends AppCompatActivity {
                     selectedFragment = new HomeFragment();
                     break;
 
+                case R.id.menu_checkIn:
+                    selectedFragment = new CheckInFragment();
+                    break;
+
                 case R.id.menu_profile:
                     selectedFragment = new ProfileFragment();
                     break;

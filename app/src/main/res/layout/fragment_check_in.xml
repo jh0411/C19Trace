@@ -32,14 +32,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/iv_checkInBell"
+            android:id="@+id/iv_checkInNotifications"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:src="@drawable/noti_bell"
+            android:src="@drawable/ic_baseline_notifications_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
 
         <Button
             android:id="@+id/btn_checkIn"
@@ -112,15 +113,6 @@
 
         </RelativeLayout>
 
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/iv_checkInBox1"-->
-        <!--        android:layout_width="340dp"-->
-        <!--        android:layout_height="70dp"-->
-        <!--        android:src="@drawable/custom_input"-->
-        <!--        tools:layout_editor_absoluteX="55dp"-->
-        <!--        tools:layout_editor_absoluteY="392dp" />-->
-
         <RelativeLayout
             android:id="@+id/checkInRelative2"
             android:layout_width="340dp"
@@ -166,7 +158,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/iv_checkInBox3"
+            android:id="@+id/checkInRelative3"
             android:layout_width="340dp"
             android:layout_height="70dp"
             android:layout_marginTop="15dp"
@@ -209,7 +201,49 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/checkInRelative4"
+            android:layout_width="340dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkInRelative3">
 
+            <ImageView
+                android:id="@+id/iv_relative4Tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/check_box" />
+
+
+            <TextView
+                android:id="@+id/tv_checkInLocation4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative4Tick"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="Tropicana Gardens Mall"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_checkInDateTime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_checkInLocation4"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/iv_relative4Tick"
+                android:fontFamily="@font/dmsans_regular"
+                android:text="MAR 23, 2022 | 10:44AM"
+                android:textColor="#1E2F97" />
+
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

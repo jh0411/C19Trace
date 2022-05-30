@@ -1,64 +1,77 @@
 package com.example.c19trace;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link InfoHubFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class InfoHubFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public InfoHubFragment() {
+    public InfoHubFragment(){
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InfoHubFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InfoHubFragment newInstance(String param1, String param2) {
-        InfoHubFragment fragment = new InfoHubFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_info_hub, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        RelativeLayout rl1 = view.findViewById(R.id.relative1);
+        RelativeLayout rl2 = view.findViewById(R.id.relative2);
+        RelativeLayout rl3 = view.findViewById(R.id.relative3);
+        RelativeLayout rl4 = view.findViewById(R.id.relative4);
+        RelativeLayout rl5 = view.findViewById(R.id.relative5);
+
+        rl1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), News1Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        rl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), News2Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        rl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), News3Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        rl4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), News4Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        rl5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), News5Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

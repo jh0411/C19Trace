@@ -48,5 +48,16 @@ public class ProfileFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
+
+        view.findViewById(R.id.btn_faqBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment next_fragment = new FaqFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("accountSettings", "frequentlyAskedQuestions");
+                next_fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+            }
+        });
     }
 }
