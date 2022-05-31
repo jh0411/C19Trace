@@ -10,4 +10,6 @@
     <string name="forgot_pass_desc">Enter your email address you’re using\nfor your account and we will send you a\npassword reset code</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_description">Type here to search</string>
 </resources>

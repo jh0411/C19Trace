@@ -44,6 +44,10 @@ public class NavigationActivity extends AppCompatActivity {
                 case R.id.menu_profile:
                     selectedFragment = new ProfileFragment();
                     break;
+
+                case R.id.menu_hotspot:
+                    selectedFragment = new HotspotFragment();
+                    break;
             }
 
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, selectedFragment).commit();
