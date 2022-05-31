@@ -23,8 +23,8 @@ public class SymptomsResultActivity extends AppCompatActivity {
 
         done = findViewById(R.id.btn_resultDone);
 
-        Intent intent = getIntent();
-        int result = intent.getIntExtra("score", 0);
+        Bundle b = getIntent().getExtras();
+        int result = b.getInt("score", 0);
 
         if(result > 3){
             riskStatus.setText("High Risk");

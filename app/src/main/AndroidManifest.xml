@@ -20,6 +20,12 @@
         android:theme="@style/Theme.C19Trace"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SymptomsResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SymptomsTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".QrScannerActivity"
             android:exported="false" />
         <activity

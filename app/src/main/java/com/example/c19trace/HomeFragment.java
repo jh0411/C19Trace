@@ -35,6 +35,17 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
+        view.findViewById(R.id.iv_homeStats).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment next_fragment = new StatisticsFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("homeFeatures", "statistics");
+                next_fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+            }
+        });
+
         view.findViewById(R.id.iv_homeInfo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,9 +1,12 @@
 package com.example.c19trace;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -62,7 +65,7 @@ public class SymptomsTestActivity extends AppCompatActivity {
         symptomsTestClassArrayList = new ArrayList<>();
 
         getTestQuestions(symptomsTestClassArrayList);
-        
+
         setDataToView();
 
         option1.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +89,11 @@ public class SymptomsTestActivity extends AppCompatActivity {
 
         if(count == symptomsTestClassArrayList.size()){
             Intent intent = new Intent(SymptomsTestActivity.this, SymptomsResultActivity.class);
+
+            Bundle b = new Bundle();
+            b.putInt("score", score);
+            intent.putExtras(b);
+
             startActivity(intent);
             finish();
         } else{
@@ -94,7 +102,6 @@ public class SymptomsTestActivity extends AppCompatActivity {
     }
 
     private void answerNo() {
-        score--;
         count++;
 
         if(count == symptomsTestClassArrayList.size()){
