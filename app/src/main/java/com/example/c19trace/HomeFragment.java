@@ -95,5 +95,15 @@ public class HomeFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
+
+        ImageView test = view.findViewById(R.id.iv_homeTest);
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SymptomsTestActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
