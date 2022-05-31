@@ -46,4 +46,6 @@
         <item>Japan</item>
         <item>Netherlands</item>
     </string-array>
+
+    <string name = "search_description">Type here to search</string>
 </resources>
