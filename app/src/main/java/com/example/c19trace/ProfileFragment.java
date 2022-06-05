@@ -1,5 +1,9 @@
 package com.example.c19trace;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -57,6 +61,39 @@ public class ProfileFragment extends Fragment {
                 bundle.putString("accountSettings", "frequentlyAskedQuestions");
                 next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+            }
+        });
+
+        Dialog dialog = new Dialog(getActivity());
+
+        Button logout = view.findViewById(R.id.btn_logoutBtn);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.setContentView(R.layout.logout_prompt);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button yes = dialog.findViewById(R.id.btn_logoutYes);
+                Button cancel = dialog.findViewById(R.id.btn_logoutCancel);
+
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), SignInActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
             }
         });
     }

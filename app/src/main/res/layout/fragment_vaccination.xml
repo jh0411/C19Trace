@@ -29,7 +29,9 @@
             android:layout_width="296dp"
             android:layout_height="216dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/vaccination_pic"
+            app:layout_constraintBottom_toTopOf="@+id/iv_vaccinationWhiteBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_vaccination" />
@@ -40,6 +42,7 @@
             android:layout_height="420dp"
             android:layout_marginTop="-10dp"
             android:src="@drawable/white_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +142,9 @@
             android:layout_width="340dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/custom_input"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">

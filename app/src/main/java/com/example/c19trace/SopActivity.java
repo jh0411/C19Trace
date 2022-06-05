@@ -28,20 +28,13 @@ public class SopActivity extends AppCompatActivity {
             }
         });
 
+        sopView.loadUrl("https://covid-19.moh.gov.my/garis-panduan/garis-panduan-kkm");
+
         WebSettings webSettings = sopView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        String pdf = "https://asset.mkn.gov.my/web/wp-content/uploads/sites/3/2019/08/MKN-SOP_ReopeningSafely_vF-ENG_Clean-1.pdf";
-        sopView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdf);
-
-
-        if (sopView.getTitle().equals("")) {
-            sopView.reload();
-
-        }
-//
-//        sopView.clearCache(true);
-//        sopView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
+        sopView.clearCache(true);
+        sopView.loadUrl("https://covid-19.moh.gov.my/garis-panduan/garis-panduan-kkm");
     }
 
     @Override

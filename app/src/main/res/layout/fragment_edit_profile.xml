@@ -189,7 +189,7 @@
         app:layout_constraintStart_toEndOf="@id/et_editProfileDOB">
 
         <Spinner
-            android:id="@+id/sp_signUpGender"
+            android:id="@+id/sp_profileGender"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:padding="18dp" />
