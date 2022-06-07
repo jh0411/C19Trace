@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176776935738",
+    "project_id": "c19trace-12be0",
+    "storage_bucket": "c19trace-12be0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176776935738:android:ebe90c1cb4bf846f2d7803",
+        "android_client_info": {
+          "package_name": "com.example.c19trace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176776935738-jcl5moc55u1htqquco5pbo0aucfp5rj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx8aGAh0KinDGTJQD5JgVCRbT3QE9feJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176776935738-jcl5moc55u1htqquco5pbo0aucfp5rj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

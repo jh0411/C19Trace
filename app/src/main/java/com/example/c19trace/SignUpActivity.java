@@ -1,14 +1,27 @@
 package com.example.c19trace;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -18,10 +31,79 @@ public class SignUpActivity extends AppCompatActivity {
 
     TextView signIn;
 
+    Button signUp;
+
+    private EditText name, phoneNumber, email, DOB, password, confirmPassword;
+    private FirebaseAuth mAuth;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            currentUser.reload();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        name = (EditText) findViewById(R.id.et_signUpName);
+        phoneNumber = (EditText) findViewById(R.id.et_signUpPhoneNum);
+        email = (EditText) findViewById(R.id.et_signUpEmail);
+        DOB = (EditText) findViewById(R.id.et_signUpDOB);
+        spinner = findViewById(R.id.sp_signUpGender);
+        password = (EditText) findViewById(R.id.et_signUpPass);
+        confirmPassword = (EditText) findViewById(R.id.et_confirmPass);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        signUp = findViewById(R.id.btn_createAcc);
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user_name = name.getText().toString();
+                String user_num = phoneNumber.getText().toString();
+                String user_mail = email.getText().toString();
+                String user_DOB = DOB.getText().toString();
+                String user_gender = spinner.getSelectedItem().toString();
+                String user_pass = password.getText().toString();
+                String user_confirmPass = confirmPassword.getText().toString();
+
+                if (user_name.equals("") || user_num.equals("") || user_mail.equals("") || user_DOB.equals("") || user_gender.equals("") || user_pass.equals("") || user_confirmPass.equals("")){
+                    Toast.makeText(SignUpActivity.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    if (user_pass.length() < 6){
+                        Toast.makeText(SignUpActivity.this, "Please make sure your password is more than 6 character!", Toast.LENGTH_SHORT).show();
+                    }
+                    else if (!user_pass.equals(user_confirmPass)){
+                        Toast.makeText(SignUpActivity.this, "Password is not match, please try again", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        mAuth.createUserWithEmailAndPassword(user_mail, user_pass)
+                                .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+                                            Log.d(TAG, "createUserWithEmail:success");
+                                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                    }
+                }
+            }
+        });
 
         signIn = findViewById(R.id.tv_signInLink);
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -31,8 +113,6 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        spinner = findViewById(R.id.sp_signUpGender);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.gender_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
