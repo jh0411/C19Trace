@@ -22,18 +22,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
     Spinner spinner;
-
     ArrayAdapter<String> adapter;
 
     TextView signIn;
-
     Button signUp;
 
     private EditText name, phoneNumber, email, DOB, password, confirmPassword;
+    DatabaseReference reference;
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -73,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String user_pass = password.getText().toString();
                 String user_confirmPass = confirmPassword.getText().toString();
 
-                if (user_name.equals("") || user_num.equals("") || user_mail.equals("") || user_DOB.equals("") || user_gender.equals("") || user_pass.equals("") || user_confirmPass.equals("")){
+                if (user_name.equals("") || user_num.equals("") || user_mail.equals("")  || user_DOB.equals("") || user_gender.equals("") || user_pass.equals("") || user_confirmPass.equals("")){
                     Toast.makeText(SignUpActivity.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -85,13 +88,17 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                     else{
                         mAuth.createUserWithEmailAndPassword(user_mail, user_pass)
-                                .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
+                                            Toast.makeText(SignUpActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
                                             // Sign in success, update UI with the signed-in user's information
                                             Log.d(TAG, "createUserWithEmail:success");
                                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                                            startActivity(intent);
                                         } else {
                                             // If sign in fails, display a message to the user.
                                             Log.w(TAG, "createUserWithEmail:failure", task.getException());

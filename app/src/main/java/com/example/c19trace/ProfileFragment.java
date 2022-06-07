@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
 
@@ -81,6 +84,8 @@ public class ProfileFragment extends Fragment {
                 yes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        Toast.makeText(getActivity(), "Sign out successfully!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), SignInActivity.class);
                         startActivity(intent);
                     }
