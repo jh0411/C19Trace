@@ -64,16 +64,16 @@
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_symptoms_test.xml" value="0.35260416666666666" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_test.xml" value="0.36666666666666664" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_change_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_change_password.xml" value="0.33" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_check_in.xml" value="0.25" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_edit_profile.xml" value="0.33" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_faq.xml" value="0.25" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_hotspot.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_info_hub.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_news.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test_result.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_vaccination.xml" value="0.18" />

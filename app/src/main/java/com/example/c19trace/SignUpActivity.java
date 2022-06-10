@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.auth.User;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -96,6 +98,21 @@ public class SignUpActivity extends AppCompatActivity {
                                             // Sign in success, update UI with the signed-in user's information
                                             Log.d(TAG, "createUserWithEmail:success");
                                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(user_name).setPhotoUri(Uri.parse("android.resource://"+ getPackageName()+"/"+R.drawable.profile_pic)).build();
+                                            user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Log.d(String.valueOf(SignUpActivity.this), "User profile created.");
+                                                    }
+                                                }
+                                            });
+
+                                            reference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("user");
+                                            UserHelper userHelperClass = new UserHelper(user_name, user_mail, user_num, user_DOB, user_gender);
+
+                                            reference.child(user.getUid()).setValue(userHelperClass);
 
                                             Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                             startActivity(intent);

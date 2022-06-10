@@ -7,15 +7,16 @@
     tools:context=".ProfileFragment"
     android:background="@drawable/background">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profilePic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/profile_pic"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_myProfile"
-        app:srcCompat="@drawable/profile_pic" />
+        />
 
     <TextView
         android:id="@+id/tv_myProfile"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/dmsans_bold"
-        android:text="My profile"
+        android:text="My Profile"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,12 +35,12 @@
         android:id="@+id/tv_displayName"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/dmsans_bold"
         android:text="Name"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
         app:layout_constraintTop_toBottomOf="@+id/tv_myProfile" />
 
@@ -47,12 +48,12 @@
         android:id="@+id/tv_displayMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmsans_bold"
         android:text="Mobile"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
         app:layout_constraintTop_toBottomOf="@+id/tv_displayName" />
 
@@ -60,12 +61,12 @@
         android:id="@+id/tv_displayEmail"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/dmsans_bold"
         android:text="Email"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iv_profilePic"
         app:layout_constraintTop_toBottomOf="@+id/tv_displayMobile" />
 
@@ -73,12 +74,12 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/dmsans_bold"
+        android:fontFamily="@font/dmsans_medium"
         android:text="Adrian Tan"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/tv_displayName"
         app:layout_constraintTop_toBottomOf="@+id/tv_myProfile" />
 
@@ -86,12 +87,12 @@
         android:id="@+id/tv_mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/dmsans_bold"
+        android:fontFamily="@font/dmsans_medium"
         android:text="+60123456789"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/tv_displayMobile"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
@@ -99,12 +100,12 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/dmsans_bold"
+        android:fontFamily="@font/dmsans_medium"
         android:text="adriantankx@gmail.com"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/tv_displayEmail"
         app:layout_constraintTop_toBottomOf="@+id/tv_mobile" />
 

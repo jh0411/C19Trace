@@ -33,7 +33,7 @@ public class EditProfile extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        spinner = view.findViewById(R.id.sp_profileGender);
+        spinner = view.findViewById(R.id.sp_editProfileGender);
 
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.gender_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

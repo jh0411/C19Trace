@@ -2,10 +2,13 @@ package com.example.c19trace;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -13,11 +16,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
+
+    TextView profileName, profileNumber, profileEmail;
+    CircleImageView profileImage;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -34,13 +56,61 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
+        profileName = (TextView) view.findViewById(R.id.tv_name);
+        profileEmail = (TextView) view.findViewById(R.id.tv_email);
+        profileNumber = (TextView) view.findViewById(R.id.tv_mobile);
+        profileImage = (CircleImageView) view.findViewById(R.id.iv_profilePic);
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("user");
+
+        profileName.setText(currentUser.getDisplayName());
+        profileEmail.setText(currentUser.getEmail());
+        profileNumber.setText(currentUser.getPhoneNumber());
+
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("profilePicture/" + currentUser.getUid() + ".png");
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+
+        storageReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                profileImage.setImageBitmap(bitmap);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapShot) {
+
+                if (snapShot.exists()){
+                    String currentUserID = currentUser.getUid();
+                    String user_name = snapShot.child(currentUserID).child("name").getValue(String.class);
+                    String user_mail = snapShot.child(currentUserID).child("email").getValue(String.class);
+                    String user_number = snapShot.child(currentUserID).child("phoneNumber").getValue(String.class);
+
+                    profileName.setText(user_name);
+                    profileEmail.setText(user_mail);
+                    profileNumber.setText(user_number);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         view.findViewById(R.id.btn_editProfileBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment next_fragment = new EditProfile();
-                Bundle bundle = new Bundle();
-                bundle.putString("accountSettings", "editProfile");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -49,9 +119,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment next_fragment = new ChangePassword();
-                Bundle bundle = new Bundle();
-                bundle.putString("accountSettings", "changePassword");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -60,9 +127,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment next_fragment = new FaqFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("accountSettings", "frequentlyAskedQuestions");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
