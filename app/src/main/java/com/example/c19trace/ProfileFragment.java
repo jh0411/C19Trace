@@ -40,7 +40,6 @@ public class ProfileFragment extends Fragment {
     TextView profileName, profileNumber, profileEmail;
     CircleImageView profileImage;
 
-
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -68,7 +67,7 @@ public class ProfileFragment extends Fragment {
         profileEmail.setText(currentUser.getEmail());
         profileNumber.setText(currentUser.getPhoneNumber());
 
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("profilePicture/" + currentUser.getUid() + ".png");
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("picture/" + currentUser.getUid() + ".png");
 
         final long ONE_MEGABYTE = 1024 * 1024;
 

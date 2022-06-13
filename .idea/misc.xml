@@ -16,6 +16,10 @@
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/drawable/tab_selector.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/drawable/tab_text_selector.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/drawable/vaccinated_box.xml" value="0.125" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_check_in_success.xml" value="0.14780701754385964" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_forgot_password.xml" value="0.14780701754385964" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_navigation.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_qr_scanner.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/activity_symptoms_result.xml" value="0.1" />
@@ -29,10 +33,13 @@
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_global.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_hotspot.xml" value="0.11085526315789473" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_notification.xml" value="0.22" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.14780701754385964" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_statistics.xml" value="0.1" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/fragment_vaccination.xml" value="0.22" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/layout/logout_prompt.xml" value="0.14780701754385964" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/menu/bottomnavigation.xml" value="0.14692982456140352" />
+        <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/menu/option_menu.xml" value="0.14692982456140352" />
         <entry key="..\:/AndroidStudioThings/C19Trace/app/src/main/res/xml/searchable.xml" value="0.4475806451612903" />
         <entry key="..\:/Users/user/AndroidStudioProjects/C19Trace/app/src/main/res/layout/activity_forgot_password.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/user/AndroidStudioProjects/C19Trace/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
