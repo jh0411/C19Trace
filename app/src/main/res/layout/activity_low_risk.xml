@@ -4,51 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SymptomsResultActivity"
+    tools:context=".LowRiskActivity"
     android:background="@drawable/background">
 
     <ImageView
-        android:id="@+id/iv_resultIcon"
+        android:id="@+id/iv_lowResultIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:src="@drawable/ic_baseline_warning_24"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/ic_baseline_thumb_up_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_riskText"
+        android:id="@+id/tv_lowRiskText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/dmsans_bold"
-        android:text="High Risk"
+        android:text="Low Risk"
         android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_resultIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_lowResultIcon" />
 
     <TextView
-        android:id="@+id/tv_riskDescription"
+        android:id="@+id/tv_lowRiskDescription"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/dmsans_regular"
-        android:text="Please stay at home at the moment and make sure you take good care of yourself until you have no symptoms at all"
+        android:text="Congratulations! You do not have any symptoms of COVID-19 at the moment."
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_riskText" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_lowRiskText" />
 
     <Button
-        android:id="@+id/btn_resultDone"
+        android:id="@+id/btn_lowResultDone"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/white_button"
         android:fontFamily="@font/dmsans_bold"
         android:text="Done"
@@ -57,5 +57,5 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_riskDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_lowRiskDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

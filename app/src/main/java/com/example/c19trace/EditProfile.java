@@ -3,6 +3,7 @@ package com.example.c19trace;
 import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -49,12 +51,15 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditProfile extends Fragment {
 
-    Spinner spinner;
+    Spinner spinnerGender;
+
     CircleImageView profilePicture;
     Uri imageUri;
     StorageReference storageProfilePicRef;
@@ -66,6 +71,8 @@ public class EditProfile extends Fragment {
     ActivityResultLauncher<Intent> intentActivityResultLauncher;
 
     ArrayAdapter<String> adapter;
+
+    DatePickerDialog.OnDateSetListener setListener;
 
     public void openGalleryForResult(View view) {
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT, null);
@@ -129,21 +136,50 @@ public class EditProfile extends Fragment {
         profileDob = view.findViewById(R.id.et_editProfileDOB);
         profilePicture = view.findViewById(R.id.iv_editProfilePicture);
 
+        Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                String date = day + "/" + month + "/" + year;
+                profileDob.setText(date);
+            }
+        };
+
+        profileDob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), R.style.CalendarTheme, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int day) {
+                        month = month + 1;
+                        String date = day + "/" + month + "/" + year;
+                        profileDob.setText(date);
+                    }
+                }, year, month, day);
+                datePickerDialog.show();
+
+            }
+        });
+
         editPen = view.findViewById(R.id.iv_editEllipse);
 
         saveChanges = view.findViewById(R.id.btn_saveChangesEdit);
 
-        spinner = view.findViewById(R.id.sp_editProfileGender);
+        spinnerGender = view.findViewById(R.id.sp_editProfileGender);
 
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.gender_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
+        spinnerGender.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
             }
 
             @Override
@@ -159,6 +195,8 @@ public class EditProfile extends Fragment {
             profileEmail.setText(currentUser.getEmail());
             profilePhone.setText(currentUser.getPhoneNumber());
 
+            String gender = spinnerGender.getSelectedItem().toString();
+
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -168,24 +206,16 @@ public class EditProfile extends Fragment {
                         String user_name = dataSnapshot.child(currentUserID).child("name").getValue(String.class);
                         String user_phone = dataSnapshot.child(currentUserID).child("phoneNumber").getValue(String.class);
                         String user_dob = dataSnapshot.child(currentUserID).child("dob").getValue(String.class);
+                        String user_gender = dataSnapshot.child(currentUserID).child("gender").getValue(String.class);
+
+                        ArrayAdapter genderAdapter = (ArrayAdapter) spinnerGender.getAdapter();
+                        int genderPosition = genderAdapter.getPosition(user_gender);
+                        spinnerGender.setSelection(genderPosition);
 
                         profileEmail.setText(user_mail);
                         profileName.setText(user_name);
                         profilePhone.setText(user_phone);
                         profileDob.setText(user_dob);
-
-                        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                dataSnapshot.child(currentUserID).child("gender").getValue(String.class);
-                                spinner.setAdapter(adapter);
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-
-                            }
-                        });
                     }
                 }
 
@@ -209,6 +239,7 @@ public class EditProfile extends Fragment {
                     String user_mail = profileEmail.getText().toString();
                     String user_phone = profilePhone.getText().toString();
                     String user_dob = profileDob.getText().toString();
+                    String user_gender = spinnerGender.getSelectedItem().toString();
 
                     UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(user_name).setPhotoUri(Uri.parse("picture/profile_pic.png")).build();
 
@@ -241,6 +272,7 @@ public class EditProfile extends Fragment {
                             databaseReference.child(currentUser.getUid()).child("email").setValue(user_mail);
                             databaseReference.child(currentUser.getUid()).child("phoneNumber").setValue(user_phone);
                             databaseReference.child(currentUser.getUid()).child("dob").setValue(user_dob);
+                            databaseReference.child(currentUser.getUid()).child("gender").setValue(user_gender);
                             databaseReference.child(currentUser.getUid()).child("profileImage");
 
                             databaseReference.child(currentUser.getUid()).child("gender").addValueEventListener(new ValueEventListener() {

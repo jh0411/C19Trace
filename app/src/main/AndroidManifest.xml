@@ -22,7 +22,13 @@
         android:theme="@style/Theme.C19Trace"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".SymptomsResultActivity"
+            android:name=".HighRiskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MediumRiskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LowRiskActivity"
             android:exported="false" />
         <activity
             android:name=".SymptomsTestActivity"

@@ -9,7 +9,7 @@
 
     <string name="forgot_pass_desc">Enter your email address you’re using\nfor your account and we will send you a\npassword reset code</string>
 
-    <string-array name = "states_array">
+    <string-array name="states_array">
         <item>Malaysia</item>
         <item>Putrajaya</item>
         <item>Perlis</item>

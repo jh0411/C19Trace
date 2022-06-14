@@ -190,6 +190,7 @@
             android:fontFamily="@font/dmsans_regular"
             android:hint="Select date"
             android:inputType="date"
+            android:focusable="false"
             android:padding="18dp"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="42dp"
