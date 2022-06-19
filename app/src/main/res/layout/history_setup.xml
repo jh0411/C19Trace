@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/checkInRelative"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_input"
+        android:layout_gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/iv_relativeTick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/check_box" />
+
+        <TextView
+            android:id="@+id/tv_checkInLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/iv_relativeTick"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="The Suburban Food Sdn Bhd"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_checkInDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_checkInLocation"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/iv_relativeTick"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="23/05/2022"
+            android:textColor="#1E2F97" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

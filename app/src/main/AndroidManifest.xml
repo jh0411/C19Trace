@@ -22,55 +22,55 @@
         android:theme="@style/Theme.C19Trace"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".HighRiskActivity"
+            android:name=".Home.HighRiskActivity"
             android:exported="false" />
         <activity
-            android:name=".MediumRiskActivity"
+            android:name=".Home.MediumRiskActivity"
             android:exported="false" />
         <activity
-            android:name=".LowRiskActivity"
+            android:name=".Home.LowRiskActivity"
             android:exported="false" />
         <activity
-            android:name=".SymptomsTestActivity"
+            android:name=".Home.SymptomsTestActivity"
             android:exported="false" />
         <activity
-            android:name=".QrScannerActivity"
+            android:name=".CheckIn.QrScannerActivity"
             android:exported="false" />
         <activity
-            android:name=".News5Activity"
+            android:name=".Home.News5Activity"
             android:exported="false" />
         <activity
-            android:name=".News4Activity"
+            android:name=".Home.News4Activity"
             android:exported="false" />
         <activity
-            android:name=".News3Activity"
+            android:name=".Home.News3Activity"
             android:exported="false" />
         <activity
-            android:name=".News2Activity"
+            android:name=".Home.News2Activity"
             android:exported="false" />
         <activity
-            android:name=".News1Activity"
+            android:name=".Home.News1Activity"
             android:exported="false" />
         <activity
-            android:name=".SopActivity"
+            android:name=".Home.SopActivity"
             android:exported="false" />
         <activity
-            android:name=".CheckInSuccessActivity"
+            android:name=".CheckIn.CheckInSuccessActivity"
             android:exported="false" />
         <activity
-            android:name=".NavigationActivity"
+            android:name=".Others.NavigationActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".Others.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Others.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".Others.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Others.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

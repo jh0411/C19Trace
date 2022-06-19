@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavigationActivity">
+    tools:context=".Others.NavigationActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/bottomNavigation"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="-2dp"
         android:layout_marginBottom="2dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,10 +20,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/white_bottom"
-        android:padding="10dp"
+        android:padding="16dp"
         app:itemIconSize="36dp"
         app:itemIconTint="#1AA7EC"
+        app:itemPaddingBottom="0dp"
+        app:itemPaddingTop="5dp"
         app:itemTextColor="#1AA7EC"
-        app:labelVisibilityMode="unlabeled"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottomnavigation" />
 </RelativeLayout>
