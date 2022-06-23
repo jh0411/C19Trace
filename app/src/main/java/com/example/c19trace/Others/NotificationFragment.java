@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.c19trace.Profile.FAQAdapter;
 import com.example.c19trace.R;
+import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
@@ -39,6 +41,8 @@ public class NotificationFragment extends Fragment {
     private FirebaseAuth mAuth;
     private ArrayList<NotificationClass> notificationList;
     private NotificationAdapter notificationAdapter;
+
+    private ListenerRegistration listenerRegistration;
 
     public NotificationFragment() {
         // Required empty public constructor

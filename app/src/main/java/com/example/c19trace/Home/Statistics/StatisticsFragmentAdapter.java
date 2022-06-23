@@ -1,13 +1,10 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.Statistics;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-import com.example.c19trace.Home.CountryFragment;
-import com.example.c19trace.Home.GlobalFragment;
 
 public class StatisticsFragmentAdapter extends FragmentStateAdapter {
 

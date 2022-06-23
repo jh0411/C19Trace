@@ -79,20 +79,10 @@ public class CheckInFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                IntentIntegrator integrator = IntentIntegrator.forSupportFragment(CheckInFragment.this);
-//
-//                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-//                integrator.setPrompt("Scan");
-//                integrator.setCameraId(0);
-//                integrator.setBeepEnabled(true);
-//                integrator.setBarcodeImageEnabled(true);
-//                integrator.setOrientationLocked(true);
-//
-//                integrator.initiateScan();
 
                 ScanOptions options = new ScanOptions();
 
-                options.setDesiredBarcodeFormats(ScanOptions.ONE_D_CODE_TYPES);
+                options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
                 options.setPrompt("Scan");
                 options.setCameraId(0);  // Use a specific camera of the device
                 options.setBeepEnabled(true);
@@ -103,34 +93,6 @@ public class CheckInFragment extends Fragment {
             }
         });
     }
-
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-//
-//        if(result != null) {
-//            if(result.getContents() == null) { //not successful
-//                Log.e("Scan*******", "Cancelled scan");
-//                Toast.makeText(getActivity(), "Cancelled scan", Toast.LENGTH_LONG).show();
-//
-//            } else { //successful get the string from the QR code
-//                Log.e("Scan", "Scanned");
-//
-//                String scan_location = result.getContents();
-//                String current_date = java.time.LocalDate.now().toString();
-//
-//                HistoryClass history = new HistoryClass(scan_location, current_date);
-//                mainViewModel.insert(history);
-//
-//                int historyListSize = historyList.size();
-//                historyList.addLast(history);
-//                recyclerView.getAdapter().notifyDataSetChanged();
-//                recyclerView.smoothScrollToPosition(historyListSize);
-//            }
-//        } else {
-//            super.onActivityResult(requestCode, resultCode, data);
-//        }
-//    }
 
     private final ActivityResultLauncher<ScanOptions> qrLauncher = registerForActivityResult(new ScanContract(),
             result -> {

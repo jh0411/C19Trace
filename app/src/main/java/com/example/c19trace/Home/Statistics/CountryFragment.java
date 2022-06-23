@@ -1,4 +1,4 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.Statistics;
 
 import android.os.Bundle;
 
@@ -14,14 +14,13 @@ import android.widget.Spinner;
 
 import com.example.c19trace.R;
 
-
-public class GlobalFragment extends Fragment {
+public class CountryFragment extends Fragment {
 
     Spinner spinner;
 
     ArrayAdapter<String> adapter;
 
-    public GlobalFragment() {
+    public CountryFragment() {
         // Required empty public constructor
     }
 
@@ -29,16 +28,16 @@ public class GlobalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_global, container, false);
+        return inflater.inflate(R.layout.fragment_country, container, false);
     }
 
     @Override
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        spinner = view.findViewById(R.id.sp_globalCountry);
+        spinner = view.findViewById(R.id.sp_malaysiaState);
 
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.global_array));
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.states_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
@@ -56,3 +55,4 @@ public class GlobalFragment extends Fragment {
         });
     }
 }
+

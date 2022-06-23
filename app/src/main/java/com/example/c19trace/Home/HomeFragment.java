@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.c19trace.Home.Statistics.StatisticsFragment;
 import com.example.c19trace.Others.NotificationFragment;
 import com.example.c19trace.R;
 
