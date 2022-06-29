@@ -37,7 +37,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
-    TextView profileName, profileNumber, profileEmail;
+    TextView profileName, profileNumber, profileEmail, riskStatus, vaccStatus;
     CircleImageView profileImage;
 
     public ProfileFragment() {
@@ -59,6 +59,9 @@ public class ProfileFragment extends Fragment {
         profileEmail = (TextView) view.findViewById(R.id.tv_email);
         profileNumber = (TextView) view.findViewById(R.id.tv_mobile);
         profileImage = (CircleImageView) view.findViewById(R.id.iv_profilePic);
+
+        riskStatus = (TextView) view.findViewById(R.id.tv_riskStatus);
+        vaccStatus = (TextView) view.findViewById(R.id.tv_vaccineStatus);
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("user");
@@ -93,10 +96,15 @@ public class ProfileFragment extends Fragment {
                     String user_name = snapShot.child(currentUserID).child("name").getValue(String.class);
                     String user_mail = snapShot.child(currentUserID).child("email").getValue(String.class);
                     String user_number = snapShot.child(currentUserID).child("phoneNumber").getValue(String.class);
+                    String user_risk = snapShot.child(currentUserID).child("Risk Status").getValue(String.class);
+                    String user_vacc = snapShot.child(currentUserID).child("Vaccination Status").getValue(String.class);
 
                     profileName.setText(user_name);
                     profileEmail.setText(user_mail);
                     profileNumber.setText(user_number);
+
+                    riskStatus.setText(user_risk);
+                    vaccStatus.setText(user_vacc);
                 }
             }
 

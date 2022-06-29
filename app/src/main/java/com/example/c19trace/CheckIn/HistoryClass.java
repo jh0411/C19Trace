@@ -1,19 +1,19 @@
 package com.example.c19trace.CheckIn;
 
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity(tableName = "history_table")
+@Entity
 public class HistoryClass {
 
-    @PrimaryKey(autoGenerate = true)
     public int id;
     private String location;
     private String date;
+    private String time;
 
-    public HistoryClass(String location, String date) {
+    public HistoryClass(String location, String date, String time) {
         this.location = location;
         this.date = date;
+        this.time = time;
     }
 
     public int getId() {
@@ -39,4 +39,13 @@ public class HistoryClass {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
 }
