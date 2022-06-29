@@ -1,4 +1,4 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.Info;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,39 +11,39 @@ import android.webkit.WebViewClient;
 
 import com.example.c19trace.R;
 
-public class News3Activity extends AppCompatActivity {
+public class News1Activity extends AppCompatActivity {
 
-    private WebView news3;
+    private WebView news1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news3);
+        setContentView(R.layout.activity_news1);
 
-        news3 = findViewById(R.id.webView_news3);
+        news1 = findViewById(R.id.webView_news1);
 
-        news3.setWebViewClient(new WebViewClient(){
+        news1.setWebViewClient(new WebViewClient(){
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
                 handler.proceed();
             }
         });
 
-        news3.loadUrl("https://www.freemalaysiatoday.com/category/nation/2022/03/25/64-covid-19-deaths-new-cases-rise-to-24316/");
+        news1.loadUrl("https://www.nst.com.my/news/nation/2022/03/782854/kj-fully-vaccinated-malaysia-singapore-land-travellers-exempted-covid-19");
 
-        WebSettings webSettings = news3.getSettings();
+        WebSettings webSettings = news1.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        news3.clearCache(true);
-        news3.loadUrl("https://www.freemalaysiatoday.com/category/nation/2022/03/25/64-covid-19-deaths-new-cases-rise-to-24316/");
+        news1.clearCache(true);
+        news1.loadUrl("https://www.nst.com.my/news/nation/2022/03/782854/kj-fully-vaccinated-malaysia-singapore-land-travellers-exempted-covid-19");
     }
 
     @Override
     public void onBackPressed()
     {
-        if(news3.canGoBack())
+        if(news1.canGoBack())
         {
-            news3.goBack();
+            news1.goBack();
         } else
         {
             super.onBackPressed();

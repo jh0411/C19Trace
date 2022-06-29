@@ -23,35 +23,41 @@
         android:theme="@style/Theme.C19Trace"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Home.HighRiskActivity"
+            android:name=".Home.VaccinationForm.VaccinationActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.MediumRiskActivity"
+            android:name=".Home.VaccinationForm.ReadVaccineInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.LowRiskActivity"
+            android:name=".Home.SymptomTest.HighRiskActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.SymptomsTestActivity"
+            android:name=".Home.SymptomTest.MediumRiskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.SymptomTest.LowRiskActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.SymptomTest.SymptomsTestActivity"
             android:exported="false" />
         <activity
             android:name=".CheckIn.QrScannerActivity"
             android:exported="false"
-            android:hardwareAccelerated="true"/>
+            android:hardwareAccelerated="true" />
         <activity
-            android:name=".Home.News5Activity"
+            android:name=".Home.Info.News5Activity"
             android:exported="false" />
         <activity
-            android:name=".Home.News4Activity"
+            android:name=".Home.Info.News4Activity"
             android:exported="false" />
         <activity
-            android:name=".Home.News3Activity"
+            android:name=".Home.Info.News3Activity"
             android:exported="false" />
         <activity
-            android:name=".Home.News2Activity"
+            android:name=".Home.Info.News2Activity"
             android:exported="false" />
         <activity
-            android:name=".Home.News1Activity"
+            android:name=".Home.Info.News1Activity"
             android:exported="false" />
         <activity
             android:name=".Home.SopActivity"

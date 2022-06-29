@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.VaccinationForm.VaccinationActivity"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_vaccinationPic"
+            android:layout_width="326dp"
+            android:layout_height="246dp"
+            android:src="@drawable/vaccination_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp"/>
+
+        <Button
+            android:id="@+id/btn_readVaccine"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Read more on vaccines!"
+            android:textAllCaps="false"
+            android:textColor="#1AA7EC"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_vaccinationPic" />
+
+        <ImageView
+            android:id="@+id/iv_vaccinationWhiteBox"
+            android:layout_width="1080px"
+            android:layout_height="1250dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/white_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_readVaccine" />
+
+        <TextView
+            android:id="@+id/tv_covidNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Vaccination Form"
+            android:textColor="#1AA7EC"
+            android:textSize="28sp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_vaccinationWhiteBox" />
+
+        <TextView
+            android:id="@+id/tv_vaccQ1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:text="Question 1"
+            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_covidNews" />
+
+        <TextView
+            android:id="@+id/tv_vaccQues1"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Have you experience severe side-effects after obtaning any previous vaccination(s)?"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vaccQ1" />
+
+        <RelativeLayout
+            android:id="@+id/vacc_rl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            app:layout_constraintTop_toBottomOf="@id/tv_vaccQues1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            >
+
+            <Spinner
+                android:id="@+id/sp_vaccAns1"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:padding="18dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_vaccQ2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:text="Question 2"
+            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacc_rl1" />
+
+        <TextView
+            android:id="@+id/tv_vaccQues2"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Have you ever had a history of a severe allergy?"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vaccQ2" />
+
+        <RelativeLayout
+            android:id="@+id/vacc_rl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            app:layout_constraintTop_toBottomOf="@id/tv_vaccQues2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            >
+
+            <Spinner
+                android:id="@+id/sp_vaccAns2"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_vaccQ3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:text="Question 3"
+            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacc_rl2" />
+
+        <TextView
+            android:id="@+id/tv_vaccQues3"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Are you pregnant or planning to conceive? (for woman)"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vaccQ3" />
+
+        <RelativeLayout
+            android:id="@+id/vacc_rl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            app:layout_constraintTop_toBottomOf="@id/tv_vaccQues3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            >
+
+            <Spinner
+                android:id="@+id/sp_vaccAns3"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_vaccQ4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:text="Question 4"
+            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacc_rl3" />
+
+        <TextView
+            android:id="@+id/tv_vaccQues4"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Are you currently breastfeeding? (for woman)"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vaccQ4" />
+
+        <RelativeLayout
+            android:id="@+id/vacc_rl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            app:layout_constraintTop_toBottomOf="@id/tv_vaccQues4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            >
+
+            <Spinner
+                android:id="@+id/sp_vaccAns4"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_vaccQ5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_medium"
+            android:text="Question 5"
+            android:textColor="@color/black"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacc_rl4" />
+
+        <TextView
+            android:id="@+id/tv_vaccQues5"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="Which type of vaccine do you prefer?"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vaccQ5" />
+
+        <RelativeLayout
+            android:id="@+id/vacc_rl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            app:layout_constraintTop_toBottomOf="@id/tv_vaccQues5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            >
+
+            <Spinner
+                android:id="@+id/sp_vaccAns5"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/vaccLineDivider"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:background="#D6D6D6"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/vacc_rl5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/vaccCheckBox1"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="I am responsible for any risks that may arise as a result of my decision/action in receiving the vaccine as the benefits of the vaccine outweigh its side-effects."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vaccLineDivider"
+            android:layout_marginTop="30dp"
+            tools:layout_editor_absoluteY="1147dp" />
+
+        <CheckBox
+            android:id="@+id/vaccCheckBox2"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="I hereby understand that the vaccine does not fully guarantee that I will not be infected with COVID-19 in the future."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vaccCheckBox1"
+            android:layout_marginTop="20dp"
+            tools:layout_editor_absoluteY="1147dp" />
+
+        <CheckBox
+            android:id="@+id/vaccCheckBox3"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:text="By filling in this form to receive the COVID-19 vaccine, I voluntarily agree to complete the number of vaccine doses as scheduled."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vaccCheckBox2"
+            android:layout_marginTop="20dp"
+            tools:layout_editor_absoluteY="1147dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submitVacc"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/blue_button"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Submit form"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vaccCheckBox3"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

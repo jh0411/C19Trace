@@ -1,5 +1,6 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.SymptomTest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.c19trace.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SymptomsTestActivity extends AppCompatActivity {
 
@@ -26,6 +34,11 @@ public class SymptomsTestActivity extends AppCompatActivity {
     Button yes;
     Button no;
 
+    String risk_status;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +49,11 @@ public class SymptomsTestActivity extends AppCompatActivity {
         no = findViewById(R.id.btn_testAnsNo);
 
         question.setText(questions[count]);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("user");
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +95,6 @@ public class SymptomsTestActivity extends AppCompatActivity {
         } else{
             Intent intent = new Intent(SymptomsTestActivity.this, MediumRiskActivity.class);
             startActivity(intent);
-
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.SymptomTest;
 
 import androidx.appcompat.app.AppCompatActivity;
 

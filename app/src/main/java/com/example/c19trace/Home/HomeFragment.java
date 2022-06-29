@@ -16,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.c19trace.Home.Info.InfoHubFragment;
 import com.example.c19trace.Home.Statistics.StatisticsFragment;
+import com.example.c19trace.Home.SymptomTest.SymptomsTestActivity;
+import com.example.c19trace.Home.VaccinationForm.VaccinationActivity;
 import com.example.c19trace.Others.NotificationFragment;
 import com.example.c19trace.R;
 
@@ -43,9 +46,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment next_fragment = new StatisticsFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("homeFeatures", "statistics");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -54,9 +54,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment next_fragment = new InfoHubFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("homeFeatures", "infoHub");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -93,9 +90,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment next_fragment = new NotificationFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("homeFeatures", "notifications");
-                next_fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -103,11 +97,8 @@ public class HomeFragment extends Fragment {
         view.findViewById(R.id.iv_homeVaccine).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment next_fragment = new VaccinationFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("homeFeatures", "vaccination");
-                next_fragment.setArguments(bundle);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+                Intent intent = new Intent(getActivity(), VaccinationActivity.class);
+                startActivity(intent);
             }
         });
 

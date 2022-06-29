@@ -1,4 +1,4 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.Info;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,38 +11,39 @@ import android.webkit.WebViewClient;
 
 import com.example.c19trace.R;
 
-public class News5Activity extends AppCompatActivity {
+public class News3Activity extends AppCompatActivity {
 
-    private WebView news5;
+    private WebView news3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news5);
-        news5 = findViewById(R.id.webView_news5);
+        setContentView(R.layout.activity_news3);
 
-        news5.setWebViewClient(new WebViewClient(){
+        news3 = findViewById(R.id.webView_news3);
+
+        news3.setWebViewClient(new WebViewClient(){
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
                 handler.proceed();
             }
         });
 
-        news5.loadUrl("https://www.theborneopost.com/2022/03/25/airasia-reminds-guests-to-adhere-to-sop-for-international-travellers-when-malaysia-reopens/");
+        news3.loadUrl("https://www.freemalaysiatoday.com/category/nation/2022/03/25/64-covid-19-deaths-new-cases-rise-to-24316/");
 
-        WebSettings webSettings = news5.getSettings();
+        WebSettings webSettings = news3.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        news5.clearCache(true);
-        news5.loadUrl("https://www.theborneopost.com/2022/03/25/airasia-reminds-guests-to-adhere-to-sop-for-international-travellers-when-malaysia-reopens/");
+        news3.clearCache(true);
+        news3.loadUrl("https://www.freemalaysiatoday.com/category/nation/2022/03/25/64-covid-19-deaths-new-cases-rise-to-24316/");
     }
 
     @Override
     public void onBackPressed()
     {
-        if(news5.canGoBack())
+        if(news3.canGoBack())
         {
-            news5.goBack();
+            news3.goBack();
         } else
         {
             super.onBackPressed();

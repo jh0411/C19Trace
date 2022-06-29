@@ -52,4 +52,17 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+
+    <string-array name="vacc_ans">
+        <item>Please select your answer</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="vacc_type">
+        <item>Please select your answer</item>
+        <item>Pfizer</item>
+        <item>Sinovac</item>
+        <item>Astra-Zeneca</item>
+    </string-array>
 </resources>

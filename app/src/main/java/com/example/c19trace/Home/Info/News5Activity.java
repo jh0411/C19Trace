@@ -1,4 +1,4 @@
-package com.example.c19trace.Home;
+package com.example.c19trace.Home.Info;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,39 +11,38 @@ import android.webkit.WebViewClient;
 
 import com.example.c19trace.R;
 
-public class News1Activity extends AppCompatActivity {
+public class News5Activity extends AppCompatActivity {
 
-    private WebView news1;
+    private WebView news5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news1);
+        setContentView(R.layout.activity_news5);
+        news5 = findViewById(R.id.webView_news5);
 
-        news1 = findViewById(R.id.webView_news1);
-
-        news1.setWebViewClient(new WebViewClient(){
+        news5.setWebViewClient(new WebViewClient(){
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
                 handler.proceed();
             }
         });
 
-        news1.loadUrl("https://www.nst.com.my/news/nation/2022/03/782854/kj-fully-vaccinated-malaysia-singapore-land-travellers-exempted-covid-19");
+        news5.loadUrl("https://www.theborneopost.com/2022/03/25/airasia-reminds-guests-to-adhere-to-sop-for-international-travellers-when-malaysia-reopens/");
 
-        WebSettings webSettings = news1.getSettings();
+        WebSettings webSettings = news5.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        news1.clearCache(true);
-        news1.loadUrl("https://www.nst.com.my/news/nation/2022/03/782854/kj-fully-vaccinated-malaysia-singapore-land-travellers-exempted-covid-19");
+        news5.clearCache(true);
+        news5.loadUrl("https://www.theborneopost.com/2022/03/25/airasia-reminds-guests-to-adhere-to-sop-for-international-travellers-when-malaysia-reopens/");
     }
 
     @Override
     public void onBackPressed()
     {
-        if(news1.canGoBack())
+        if(news5.canGoBack())
         {
-            news1.goBack();
+            news5.goBack();
         } else
         {
             super.onBackPressed();
