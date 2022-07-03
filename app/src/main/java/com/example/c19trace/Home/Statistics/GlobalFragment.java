@@ -36,11 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class GlobalFragment extends Fragment {
 
-    TextView globalNew, globalRecovered, globalDeath, globalAffected, globalTotal;
-
-    Spinner spinner;
-
-    ArrayAdapter<String> adapter;
+    TextView globalActive, globalRecovered, globalDeath, globalAffected, globalTotal;
 
     public GlobalFragment() {
         // Required empty public constructor
@@ -57,26 +53,7 @@ public class GlobalFragment extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        spinner = view.findViewById(R.id.sp_globalCountry);
-
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.global_array));
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        globalNew = view.findViewById(R.id.tv_globalNewNum);
+        globalActive = view.findViewById(R.id.tv_globalNewNum);
         globalRecovered = view.findViewById(R.id.tv_globalRecNum);
         globalDeath = view.findViewById(R.id.tv_globalDedNum);
         globalAffected = view.findViewById(R.id.tv_globalAffNum);
@@ -104,9 +81,9 @@ public class GlobalFragment extends Fragment {
                     // https://www.journaldev.com/10642/android-jsonobject-json-parsing
                     JSONObject jsonObject = new JSONObject(response.toString());
 
-                    globalNew.setText(jsonObject.getString("todayCases"));
-                    globalRecovered.setText(jsonObject.getString("todayRecovered"));
-                    globalDeath.setText(jsonObject.getString("todayDeaths"));
+                    globalActive.setText(jsonObject.getString("active"));
+                    globalRecovered.setText(jsonObject.getString("recovered"));
+                    globalDeath.setText(jsonObject.getString("deaths"));
                     globalAffected.setText(jsonObject.getString("affectedCountries"));
                     globalTotal.setText(jsonObject.getString("cases"));
                 } catch (JSONException e) {

@@ -20,6 +20,7 @@ import com.example.c19trace.Home.Info.InfoHubFragment;
 import com.example.c19trace.Home.Statistics.StatisticsFragment;
 import com.example.c19trace.Home.SymptomTest.SymptomsTestActivity;
 import com.example.c19trace.Home.VaccinationForm.VaccinationActivity;
+import com.example.c19trace.Hotspot.HotspotFragment;
 import com.example.c19trace.Others.NotificationFragment;
 import com.example.c19trace.R;
 
@@ -42,10 +43,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.iv_homeStats).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.iv_homeHotspot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment next_fragment = new StatisticsFragment();
+                Fragment next_fragment = new HotspotFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
             }
         });
@@ -86,13 +87,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.iv_homeNotifications).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment next_fragment = new NotificationFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
-            }
-        });
+//        view.findViewById(R.id.iv_homeNotifications).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Fragment next_fragment = new NotificationFragment();
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
+//            }
+//        });
 
         view.findViewById(R.id.iv_homeVaccine).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -44,6 +45,7 @@ public class CheckInFragment extends Fragment {
 //    private MainViewModel mainViewModel;
     private RecyclerView recyclerView;
     Button button;
+    TextView link;
     ArrayList<HistoryClass> checkInArrayList;
     HistoryAdapter historyAdapter;
 
@@ -74,6 +76,7 @@ public class CheckInFragment extends Fragment {
 //        });
 
         button = view.findViewById(R.id.btn_checkIn);
+        link = view.findViewById(R.id.tv_checkInHistory);
         checkInArrayList = new ArrayList<>();
 
         mDatabase = FirebaseDatabase.getInstance();
@@ -93,6 +96,14 @@ public class CheckInFragment extends Fragment {
                 options.setOrientationLocked(true);
 
                 qrLauncher.launch(options);
+            }
+        });
+
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CheckInHistoryActivity.class);
+                startActivity(intent);
             }
         });
 

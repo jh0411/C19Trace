@@ -9,43 +9,7 @@
 
     <string name="forgot_pass_desc">Enter your email address you’re using\nfor your account and we will send you a\npassword reset code</string>
 
-    <string-array name="states_array">
-        <item>Malaysia</item>
-        <item>Putrajaya</item>
-        <item>Perlis</item>
-        <item>Johor</item>
-        <item>Kedah</item>
-        <item>Selangor</item>
-        <item>Perak</item>
-        <item>Sarawak</item>
-        <item>Negeri Sembilan</item>
-        <item>Terrenganu</item>
-        <item>Pahang</item>
-        <item>Kuala Lumpur</item>
-        <item>Sabah</item>
-        <item>Kelantan</item>
-        <item>Melaka</item>
-        <item>Pulau Pinang</item>
-    </string-array>
-
-    <string-array name="global_array">
-        <item>World</item>
-        <item>United States</item>
-        <item>India</item>
-        <item>Brazil</item>
-        <item>France</item>
-        <item>Germany</item>
-        <item>United Kingdom</item>
-        <item>South Korea</item>
-        <item>Russia</item>
-        <item>Italy</item>
-        <item>Turkey</item>
-        <item>Spain</item>
-        <item>Vietnam</item>
-        <item>Argentina</item>
-        <item>Japan</item>
-        <item>Netherlands</item>
-    </string-array>
+    <string name="view_check_in_history"><u>View History</u></string>
 
     <string-array name="gender_array">
         <item>Gender</item>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.example.c19trace.CheckIn.CheckInFragment;
 import com.example.c19trace.Home.HomeFragment;
+import com.example.c19trace.Home.Statistics.StatisticsFragment;
 import com.example.c19trace.Hotspot.HotspotFragment;
 import com.example.c19trace.Profile.ProfileFragment;
 import com.example.c19trace.R;
@@ -50,8 +51,8 @@ public class NavigationActivity extends AppCompatActivity {
                     selectedFragment = new ProfileFragment();
                     break;
 
-                case R.id.menu_hotspot:
-                    selectedFragment = new HotspotFragment();
+                case R.id.menu_statistics:
+                    selectedFragment = new StatisticsFragment();
                     break;
             }
 

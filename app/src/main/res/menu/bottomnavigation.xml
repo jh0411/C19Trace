@@ -7,9 +7,9 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/menu_hotspot"
-        android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Hotspot"/>
+        android:id="@+id/menu_statistics"
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="Statistics"/>
 
     <item
         android:id="@+id/menu_checkIn"

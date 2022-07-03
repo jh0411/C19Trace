@@ -7,16 +7,16 @@
     tools:context=".Home.HomeFragment"
     android:background="@drawable/background">
 
-    <ImageView
-        android:id="@+id/iv_homeNotifications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:src="@drawable/ic_baseline_notifications_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_homeNotifications"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:src="@drawable/ic_baseline_notifications_24"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:tint="@color/white" />-->
 
     <ImageView
         android:id="@+id/iv_homeMainImg"
@@ -51,12 +51,12 @@
         app:layout_constraintTop_toTopOf="@+id/iv_homeWhiteBottom" />
 
     <ImageView
-        android:id="@+id/iv_homeStats"
+        android:id="@+id/iv_homeHotspot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/home_statistics"
+        android:src="@drawable/home_hotspot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_homeTitle" />
 
@@ -67,7 +67,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/home_info"
         app:layout_constraintEnd_toStartOf="@+id/iv_homeSop"
-        app:layout_constraintStart_toEndOf="@+id/iv_homeStats"
+        app:layout_constraintStart_toEndOf="@+id/iv_homeHotspot"
         app:layout_constraintTop_toBottomOf="@+id/tv_homeTitle" />
 
     <ImageView
@@ -88,7 +88,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/home_emergency"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_homeStats" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeHotspot" />
 
     <ImageView
         android:id="@+id/iv_homeVaccine"
@@ -111,16 +111,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_homeSop" />
 
     <TextView
-        android:id="@+id/tv_homeStats"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_homeHotspot"
+        android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:text="Statistics"
+        android:text="Hotspot"
         android:textAlignment="center"
         android:fontFamily="@font/dmsans_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_homeStats" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_homeHotspot" />
 
     <TextView
         android:id="@+id/tv_homeInfo"
@@ -131,7 +131,7 @@
         android:textAlignment="center"
         android:fontFamily="@font/dmsans_medium"
         app:layout_constraintEnd_toStartOf="@+id/tv_homeSop"
-        app:layout_constraintStart_toEndOf="@+id/tv_homeStats"
+        app:layout_constraintStart_toEndOf="@+id/tv_homeHotspot"
         app:layout_constraintTop_toBottomOf="@+id/iv_homeInfo" />
 
     <TextView
