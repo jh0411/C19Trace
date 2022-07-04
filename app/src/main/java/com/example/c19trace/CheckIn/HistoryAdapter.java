@@ -14,6 +14,8 @@ import com.example.c19trace.R;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class HistoryAdapter extends ListAdapter<HistoryClass, HistoryAdapter.HistoryViewHolder> {
 
     public HistoryAdapter(@NonNull DiffUtil.ItemCallback<HistoryClass> diffCallback) {
@@ -67,7 +69,7 @@ public class HistoryAdapter extends ListAdapter<HistoryClass, HistoryAdapter.His
         public boolean areContentsTheSame(@NonNull HistoryClass oldItem, @NonNull HistoryClass newItem) {
             return oldItem.getDate().equals(newItem.getDate()) &&
                     oldItem.getLocation().equals(newItem.getLocation()) &&
-                    oldItem.getTime().equals(newItem.getLocation());
+                    oldItem.getTime().equals(newItem.getTime());
         }
     }
 }
