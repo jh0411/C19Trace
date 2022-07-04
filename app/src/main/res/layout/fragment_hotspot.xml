@@ -37,7 +37,7 @@
         android:id="@+id/btn_hotspotBtn"
         android:layout_width="240dp"
         android:layout_height="55dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/custom_input"
         android:fontFamily="@font/dmsans_bold"
         android:text="Discover hotspots"
