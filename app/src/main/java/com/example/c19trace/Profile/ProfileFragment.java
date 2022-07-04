@@ -159,6 +159,7 @@ public class ProfileFragment extends Fragment {
                         Toast.makeText(getActivity(), "Sign out successfully!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getActivity(), SignInActivity.class);
                         startActivity(intent);
+                        getActivity().onBackPressed();
                     }
                 });
 

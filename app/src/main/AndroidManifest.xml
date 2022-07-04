@@ -40,9 +40,6 @@
             android:name=".CheckIn.CheckInHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Hotspot.CovidHotspotActivity"
-            android:exported="false" />
-        <activity
             android:name=".Home.VaccinationForm.VaccinationActivity"
             android:exported="false" />
         <activity

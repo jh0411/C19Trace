@@ -11,9 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.c19trace.CheckIn.CheckInFragment;
+import com.example.c19trace.CheckIn.CheckInHistoryActivity;
 import com.example.c19trace.Home.HomeFragment;
 import com.example.c19trace.Others.SignUpActivity;
 import com.example.c19trace.R;
@@ -34,6 +37,8 @@ public class VaccinationActivity extends AppCompatActivity implements AdapterVie
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
+    ImageView back;
 
     private String userName;
 
@@ -101,6 +106,17 @@ public class VaccinationActivity extends AppCompatActivity implements AdapterVie
                 VaccineFormClass vaccineFormClass = new VaccineFormClass(q1, q2, q3, q4, q5);
                 databaseReference.child(currentUser.getUid()).setValue(vaccineFormClass);
 
+            }
+        });
+
+        back = findViewById(R.id.vaccinationBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(VaccinationActivity.this, CheckInFragment.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
             }
         });
     }
