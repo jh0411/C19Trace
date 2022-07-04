@@ -29,4 +29,5 @@
         <item>Sinovac</item>
         <item>Astra-Zeneca</item>
     </string-array>
+    <string name="title_activity_hotspot">HotspotActivity</string>
 </resources>

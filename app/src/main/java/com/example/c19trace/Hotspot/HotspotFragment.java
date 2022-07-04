@@ -28,7 +28,7 @@ public class HotspotFragment extends Fragment {
         hotspot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CovidHotspotActivity.class);
+                Intent intent = new Intent(getActivity(), HotspotActivity.class);
                 startActivity(intent);
             }
         });

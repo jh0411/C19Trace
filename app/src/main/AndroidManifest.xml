@@ -27,6 +27,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.C19Trace"
         android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD1itzgMldmQ1EDQQxwQbQ6SoM5-bPVXXo" />
+
+        <activity
+            android:name=".Hotspot.HotspotActivity"
+            android:exported="false"
+            android:label="@string/title_activity_hotspot" />
         <activity
             android:name=".CheckIn.CheckInHistoryActivity"
             android:exported="false" />
