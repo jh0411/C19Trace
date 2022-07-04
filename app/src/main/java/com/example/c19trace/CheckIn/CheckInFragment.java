@@ -42,7 +42,7 @@ public class CheckInFragment extends Fragment {
 
     ActivityMainBinding binding;
 
-//    private MainViewModel mainViewModel;
+    //    private MainViewModel mainViewModel;
     private RecyclerView recyclerView;
     Button button;
     TextView link;
@@ -76,7 +76,7 @@ public class CheckInFragment extends Fragment {
 //        });
 
         button = view.findViewById(R.id.btn_checkIn);
-        link = view.findViewById(R.id.tv_checkInHistory);
+        link = view.findViewById(R.id.tv_checkHistoryLink);
         checkInArrayList = new ArrayList<>();
 
         mDatabase = FirebaseDatabase.getInstance();
@@ -110,10 +110,54 @@ public class CheckInFragment extends Fragment {
         //Load check in history from API
 //        retrieveCheckInHistoryFromApi();
 
-
+//        //Set up recycler view to show check in history
+//        recyclerView = view.findViewById(R.id.recyclerview_checkInHistory);
+//        historyAdapter = new HistoryAdapter(new HistoryAdapter.HistoryDiff());
+//        recyclerView.setAdapter(historyAdapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        historyAdapter.submitList(checkInArrayList);
     }
 
-
+//    //Get check in history from API
+//    private void retrieveCheckInHistoryFromApi(){
+//        String url = "https://62bb32877bdbe01d52998dd7.mockapi.io/History/checkIn";
+//
+//        //declare a new variable for the request queue
+//        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+//
+//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+//                Request.Method.GET,
+//                url,
+//                null,
+//                new Response.Listener<JSONArray>() {
+//                    @Override
+//                    public void onResponse(JSONArray response) {
+//                        recyclerView.setVisibility(View.VISIBLE);
+//
+//                        for (int i = 0; i < response.length(); i++) {
+//                            try {
+//                                JSONObject jsonObject = response.getJSONObject(i);
+//
+//                                String location = jsonObject.getString("location");
+//                                String date = jsonObject.getString("date");
+//                                String time = jsonObject.getString("time");
+//
+//                                checkInArrayList.add(new HistoryClass(location, date, time));
+//
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(getActivity(),"Failed to retrieve data!", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//        requestQueue.add(jsonArrayRequest);
+//    }
 
     private final ActivityResultLauncher<ScanOptions> qrLauncher = registerForActivityResult(new ScanContract(),
             result -> {
@@ -136,10 +180,10 @@ public class CheckInFragment extends Fragment {
                     //Add a new history to the check in history list
                     checkInArrayList.add(history);
 
-                    int historyListSize = checkInArrayList.size();
-                    recyclerView.getAdapter().notifyItemInserted(historyListSize);
-                    recyclerView.getAdapter().notifyDataSetChanged();
-                    recyclerView.smoothScrollToPosition(historyListSize);
+//                    int historyListSize = checkInArrayList.size();
+//                    recyclerView.getAdapter().notifyItemInserted(historyListSize);
+//                    recyclerView.getAdapter().notifyDataSetChanged();
+//                    recyclerView.smoothScrollToPosition(historyListSize);
 
                     Intent intent = new Intent(getActivity(), CheckInSuccessActivity.class);
                     intent.putExtra("Location", scan_location);
