@@ -26,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.C19Trace"
+        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
 
         <meta-data
