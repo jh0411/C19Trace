@@ -16,7 +16,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.c19trace.Hotspot.CovidHotspotActivity;
 import com.example.c19trace.R;
 
 import org.json.JSONArray;
@@ -85,6 +84,11 @@ public class CheckInHistoryActivity extends AppCompatActivity {
                                 String time = jsonObject.getString("time");
 
                                 checkInArrayList.add(new HistoryClass(location, date, time));
+
+                                int historyListSize = checkInArrayList.size();
+                                recyclerView.getAdapter().notifyItemInserted(historyListSize);
+                                recyclerView.getAdapter().notifyDataSetChanged();
+                                recyclerView.smoothScrollToPosition(historyListSize);
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

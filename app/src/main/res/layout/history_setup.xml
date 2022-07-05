@@ -14,7 +14,6 @@
         android:id="@+id/checkInRelative"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/custom_input"
         android:layout_gravity="center"
         >
 

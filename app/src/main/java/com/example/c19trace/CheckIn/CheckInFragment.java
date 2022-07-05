@@ -34,6 +34,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -171,7 +172,7 @@ public class CheckInFragment extends Fragment {
                     //Get the information string from the QR scan
                     String scan_location = result.getContents();
                     String current_date = java.time.LocalDate.now().toString();
-                    String current_time = java.time.LocalTime.now().toString();
+                    String current_time = java.time.LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString();
 
                     //Post a new json object to the MockAPI using volley
                     HistoryClass history = new HistoryClass(scan_location, current_date, current_time);
@@ -180,10 +181,7 @@ public class CheckInFragment extends Fragment {
                     //Add a new history to the check in history list
                     checkInArrayList.add(history);
 
-//                    int historyListSize = checkInArrayList.size();
-//                    recyclerView.getAdapter().notifyItemInserted(historyListSize);
-//                    recyclerView.getAdapter().notifyDataSetChanged();
-//                    recyclerView.smoothScrollToPosition(historyListSize);
+
 
                     Intent intent = new Intent(getActivity(), CheckInSuccessActivity.class);
                     intent.putExtra("Location", scan_location);

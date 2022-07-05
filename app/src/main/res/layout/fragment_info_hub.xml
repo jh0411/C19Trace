@@ -72,7 +72,7 @@
                 android:fontFamily="@font/dmsans_bold"
                 android:text="KJ: Fully-vaccinated Malaysia-Singapore land travellers exempted from Covid-19 test, quarantine"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/sub1"
@@ -112,11 +112,10 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_toEndOf="@+id/cover_image2"
+                android:fontFamily="@font/dmsans_bold"
                 android:text="Covid-19: Malaysia to seek clarification from EU over non-recognition of Sinovac vaccine, says KJ"
                 android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_bold"
-                android:textSize="16sp"
-                />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/sub2"
@@ -156,11 +155,10 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_toEndOf="@+id/cover_image3"
+                android:fontFamily="@font/dmsans_bold"
                 android:text="64 Covid-19 deaths, new cases rise to 24,316"
                 android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_bold"
-                android:textSize="16sp"
-                />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/sub3"
@@ -203,7 +201,7 @@
                 android:fontFamily="@font/dmsans_bold"
                 android:text="Covid-19 vaccination: 36% of Malaysian children given first jab as of March 23"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/sub4"
@@ -243,11 +241,10 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_toEndOf="@+id/cover_image5"
+                android:fontFamily="@font/dmsans_bold"
                 android:text="AirAsia reminds guests to adhere to SOP for international travellers when Malaysia reopens"
                 android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_bold"
-                android:textSize="16sp"
-                />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/sub5"
@@ -262,17 +259,6 @@
                 android:textSize="12dp" />
 
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/iv_infoNotifications"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:src="@drawable/ic_baseline_notifications_24"
-            app:tint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.c19trace.CheckIn.CheckInFragment;
+import com.example.c19trace.Home.VaccinationForm.VaccinationActivity;
 import com.example.c19trace.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,9 +37,11 @@ public class SymptomsTestActivity extends AppCompatActivity {
     Button yes;
     Button no;
 
+    ImageView back;
+
     String risk_status;
 
-    FirebaseDatabase firebaseDatabase;
+    FirebaseUser currentUser;
     DatabaseReference databaseReference;
 
     @Override
@@ -50,10 +55,9 @@ public class SymptomsTestActivity extends AppCompatActivity {
 
         question.setText(questions[count]);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("user");
 
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,26 +79,44 @@ public class SymptomsTestActivity extends AppCompatActivity {
                 if(count < questions.length - 1){
                     count++;
 
-                question.setText(questions[count]);
+                    question.setText(questions[count]);
                 }else{
                     status(symptoms);
                 }
             }
         });
+
+        back = findViewById(R.id.symptomsBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SymptomsTestActivity.this, CheckInFragment.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+            }
+        });
     }
 
     private void status(int symptoms) {
+
+        String user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         if(symptoms >= 4){
             Intent intent = new Intent(SymptomsTestActivity.this, HighRiskActivity.class);
             startActivity(intent);
+            databaseReference.child(user).child("Risk Status").setValue("High Risk");
 
         } else if(symptoms == 0){
             Intent intent = new Intent(SymptomsTestActivity.this, LowRiskActivity.class);
             startActivity(intent);
+            databaseReference.child(user).child("Risk Status").setValue("Low Risk");
 
         } else{
             Intent intent = new Intent(SymptomsTestActivity.this, MediumRiskActivity.class);
             startActivity(intent);
+            databaseReference.child(user).child("Risk Status").setValue("Medium Risk");
+
         }
     }
 }
