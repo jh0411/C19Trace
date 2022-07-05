@@ -114,11 +114,10 @@ public class HotspotActivity extends FragmentActivity implements OnMapReadyCallb
             Toast.makeText(this, "Problem reading list of locations.", Toast.LENGTH_LONG).show();
         }
 
-        // Create a heat map tile provider, passing it the latlngs of the police stations.
         HeatmapTileProvider mProvider = new HeatmapTileProvider.Builder()
                 .data(list)
                 .build();
-        // Add a tile overlay to the map, using the heat map tile provider.
+
         mMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
     }
 
@@ -144,8 +143,7 @@ public class HotspotActivity extends FragmentActivity implements OnMapReadyCallb
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
                     mMap.setMyLocationEnabled(true);
             }
-            else
-                Toast.makeText(getApplicationContext(),"User denied location permission",Toast.LENGTH_SHORT).show();
-        }
+        } else
+            Toast.makeText(getApplicationContext(),"User denied location permission",Toast.LENGTH_SHORT).show();
     }
 }
