@@ -159,24 +159,6 @@ public class SignUpActivity extends AppCompatActivity {
 
                                             reference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("user");
 
-//                                            ValueEventListener eventListener = new ValueEventListener() {
-//                                                @Override
-//                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                                                    for(DataSnapshot ds: snapshot.getChildren()){
-//                                                        ds.child("riskStatus").getRef().setValue(user_risk);
-//                                                        ds.child("vaccinationStatus").getRef().setValue(user_vacc);
-//                                                    }
-//                                                }
-//
-//                                                @Override
-//                                                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                                }
-//                                            };
-//
-//                                            reference.addListenerForSingleValueEvent(eventListener);
-
                                             UserHelper userHelperClass = new UserHelper(user_name, user_mail, user_num, user_DOB, user_gender, user_risk, user_vacc);
 
                                             reference.child(user.getUid()).setValue(userHelperClass);
