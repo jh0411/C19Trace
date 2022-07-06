@@ -39,8 +39,6 @@ public class SymptomsTestActivity extends AppCompatActivity {
 
     ImageView back;
 
-    String risk_status;
-
     FirebaseUser currentUser;
     DatabaseReference databaseReference;
 

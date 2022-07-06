@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.c19trace.CheckIn.CheckInFragment;
+import com.example.c19trace.Home.VaccinationForm.VaccinationActivity;
 import com.example.c19trace.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +23,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     EditText email;
     Button resetPass;
     FirebaseAuth mAuth;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,17 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                             }
                         });
                 }
+            }
+        });
+
+        back = findViewById(R.id.forgotPassBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForgotPasswordActivity.this, SignInActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
             }
         });
     }

@@ -27,12 +27,6 @@ import com.google.gson.GsonBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 
 public class GlobalFragment extends Fragment {
 
@@ -63,22 +57,14 @@ public class GlobalFragment extends Fragment {
     }
 
     private void fetchAPIUsingVolley() {
-        // Instantiate the Volley RequestQueue.
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
 
         String url = "https://disease.sh/v3/covid-19/all";
-
-        // https://developer.android.com/training/volley/simple
-        // Request a string response from the provided URL.
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
-                    // Creating object of JSONObject
-                    // https://developer.android.com/reference/org/json/JSONObject
-                    // https://www.tutorialspoint.com/android/android_json_parser.htm
-                    // https://www.journaldev.com/10642/android-jsonobject-json-parsing
                     JSONObject jsonObject = new JSONObject(response.toString());
 
                     globalActive.setText(jsonObject.getString("active"));
@@ -97,7 +83,6 @@ public class GlobalFragment extends Fragment {
             }
         });
 
-        // Add the request to the RequestQueue.
         requestQueue.add(request);
     }
 }

@@ -16,10 +16,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.c19trace.CheckIn.CheckInFragment;
+import com.example.c19trace.CheckIn.CheckInHistoryActivity;
 import com.example.c19trace.Profile.UserHelper;
 import com.example.c19trace.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,19 +46,19 @@ public class SignUpActivity extends AppCompatActivity {
 
     TextView signIn;
     Button signUp;
+    ImageView back;
 
     private EditText name, phoneNumber, email, DOB, password, confirmPassword;
     DatabaseReference reference;
 
     private FirebaseAuth mAuth;
-    private String userId;
 
     DatePickerDialog.OnDateSetListener setListener;
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             currentUser.reload();
@@ -119,6 +122,9 @@ public class SignUpActivity extends AppCompatActivity {
                 String user_pass = password.getText().toString();
                 String user_confirmPass = confirmPassword.getText().toString();
 
+                String user_risk = "Low Risk";
+                String user_vacc = "Not Vaccinated";
+
                 if (user_name.equals("") || user_num.equals("") || user_mail.equals("")  || user_DOB.equals("") || user_gender.equals("") || user_pass.equals("") || user_confirmPass.equals("")){
                     Toast.makeText(SignUpActivity.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
                 }
@@ -141,6 +147,7 @@ public class SignUpActivity extends AppCompatActivity {
                                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                                             UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(user_name).setPhotoUri(Uri.parse("android.resource://"+ getPackageName()+"/"+R.drawable.profile_pic)).build();
+
                                             user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
@@ -152,27 +159,25 @@ public class SignUpActivity extends AppCompatActivity {
 
                                             reference = FirebaseDatabase.getInstance("https://c19trace-12be0-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("user");
 
-                                            ValueEventListener eventListener = new ValueEventListener() {
-                                                @Override
-                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                    String risk_status = "Low Risk";
-                                                    String vacc_status = "Not Vaccinated";
+//                                            ValueEventListener eventListener = new ValueEventListener() {
+//                                                @Override
+//                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                                                    for(DataSnapshot ds: snapshot.getChildren()){
+//                                                        ds.child("riskStatus").getRef().setValue(user_risk);
+//                                                        ds.child("vaccinationStatus").getRef().setValue(user_vacc);
+//                                                    }
+//                                                }
+//
+//                                                @Override
+//                                                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                                                }
+//                                            };
+//
+//                                            reference.addListenerForSingleValueEvent(eventListener);
 
-                                                    for(DataSnapshot ds: snapshot.getChildren()){
-                                                        ds.child("Risk Status").getRef().setValue(risk_status);
-                                                        ds.child("Vaccination Status").getRef().setValue(vacc_status);
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                                }
-                                            };
-
-                                            reference.addListenerForSingleValueEvent(eventListener);
-
-                                            UserHelper userHelperClass = new UserHelper(user_name, user_mail, user_num, user_DOB, user_gender);
+                                            UserHelper userHelperClass = new UserHelper(user_name, user_mail, user_num, user_DOB, user_gender, user_risk, user_vacc);
 
                                             reference.child(user.getUid()).setValue(userHelperClass);
 
@@ -217,7 +222,16 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+        back = findViewById(R.id.signUpBack);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+            }
+        });
+
     }
-
-
 }

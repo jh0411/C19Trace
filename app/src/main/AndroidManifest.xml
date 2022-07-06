@@ -59,10 +59,6 @@
             android:name=".Home.SymptomTest.SymptomsTestActivity"
             android:exported="false" />
         <activity
-            android:name=".CheckIn.QrScannerActivity"
-            android:exported="false"
-            android:hardwareAccelerated="true" />
-        <activity
             android:name=".Home.Info.News5Activity"
             android:exported="false" />
         <activity

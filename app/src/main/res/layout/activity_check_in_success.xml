@@ -116,24 +116,24 @@
         android:id="@+id/iv_riskStatusTick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_riskStatusBox"
         app:layout_constraintStart_toStartOf="@+id/iv_riskStatusBox"
         app:layout_constraintTop_toTopOf="@+id/iv_riskStatusBox"
+        android:layout_marginTop="12dp"
         app:srcCompat="@drawable/check_box" />
 
     <TextView
         android:id="@+id/tv_riskStatusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="10dp"
         android:fontFamily="@font/dmsans_bold"
         android:text="Medium risk"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/iv_riskStatusTick"
-        app:layout_constraintTop_toTopOf="@+id/iv_riskStatusBox" />
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_riskStatusBox"
+        app:layout_constraintStart_toStartOf="@+id/iv_riskStatusBox"
+        app:layout_constraintTop_toBottomOf="@+id/iv_riskStatusTick" />
 
     <ImageView
         android:id="@+id/iv_vaccStatusBox"
@@ -149,22 +149,22 @@
         android:id="@+id/iv_vaccStatusIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="@+id/iv_vaccStatusBox"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_vaccStatusBox"
+        app:layout_constraintStart_toEndOf="@+id/iv_riskStatusBox"
         app:layout_constraintTop_toTopOf="@+id/iv_vaccStatusBox"
         app:srcCompat="@drawable/syringe" />
 
     <TextView
         android:id="@+id/tv_vaccStatusText"
-        android:layout_width="90dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
         android:fontFamily="@font/dmsans_bold"
-        android:text="Not\nvaccinated"
+        android:text="Not vaccinated"
         android:textColor="@color/black"
+        android:layout_marginTop="5dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/iv_vaccStatusIcon"
-        app:layout_constraintTop_toTopOf="@+id/iv_vaccStatusBox" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_vaccStatusBox"
+        app:layout_constraintStart_toEndOf="@+id/iv_riskStatusBox"
+        app:layout_constraintTop_toBottomOf="@+id/iv_vaccStatusIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

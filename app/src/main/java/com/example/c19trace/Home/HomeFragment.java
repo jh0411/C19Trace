@@ -17,11 +17,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.c19trace.Home.Info.InfoHubFragment;
-import com.example.c19trace.Home.Statistics.StatisticsFragment;
 import com.example.c19trace.Home.SymptomTest.SymptomsTestActivity;
 import com.example.c19trace.Home.VaccinationForm.VaccinationActivity;
 import com.example.c19trace.Hotspot.HotspotFragment;
-import com.example.c19trace.Others.NotificationFragment;
 import com.example.c19trace.R;
 
 
@@ -86,14 +84,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-//        view.findViewById(R.id.iv_homeNotifications).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Fragment next_fragment = new NotificationFragment();
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
-//            }
-//        });
 
         view.findViewById(R.id.iv_homeVaccine).setOnClickListener(new View.OnClickListener() {
             @Override

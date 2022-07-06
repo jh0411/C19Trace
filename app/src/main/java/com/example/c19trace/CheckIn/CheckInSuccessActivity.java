@@ -61,8 +61,8 @@ public class CheckInSuccessActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     String currentUserID = currentUser.getUid();
-                    String user_risk = snapshot.child(currentUserID).child("Risk Status").getValue(String.class);
-                    String user_vacc = snapshot.child(currentUserID).child("Vaccination Status").getValue(String.class);
+                    String user_risk = snapshot.child(currentUserID).child("riskStatus").getValue(String.class);
+                    String user_vacc = snapshot.child(currentUserID).child("vaccinationStatus").getValue(String.class);
 
                     risk_status.setText(user_risk);
                     vacc_status.setText(user_vacc);

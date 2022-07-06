@@ -68,9 +68,9 @@
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/drawable/white_bottom.xml" value="0.2945" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/drawable/white_button.xml" value="0.3205" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_check_in_history.xml" value="0.17831813576494426" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_check_in_success.xml" value="0.25" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_check_in_success.xml" value="0.33" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_forgot_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_hotspot.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_navigation.xml" value="0.25" />
@@ -83,14 +83,17 @@
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/activity_vaccination.xml" value="0.23143115942028986" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_change_password.xml" value="0.33" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_check_in.xml" value="0.25" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_country.xml" value="0.2128623188405797" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_faq.xml" value="0.25" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_global.xml" value="0.2128623188405797" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_hotspot.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_info_hub.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_news.xml" value="0.36666666666666664" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
-        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_statistics.xml" value="0.2128623188405797" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_symptoms_test_result.xml" value="0.22" />
         <entry key="..\:/XMUM/C19Trace/app/src/main/res/layout/fragment_vaccination.xml" value="0.18" />

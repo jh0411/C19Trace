@@ -48,7 +48,6 @@ public class CheckInHistoryActivity extends AppCompatActivity {
             }
         });
 
-        //Load check in history from API
         retrieveCheckInHistoryFromApi();
 
         //Set up recycler view to show check in history
@@ -59,11 +58,9 @@ public class CheckInHistoryActivity extends AppCompatActivity {
         historyAdapter.submitList(checkInArrayList);
     }
 
-    //Get check in history from API
     private void retrieveCheckInHistoryFromApi(){
         String url = "https://62bb32877bdbe01d52998dd7.mockapi.io/History/checkIn";
 
-        //declare a new variable for the request queue
         RequestQueue requestQueue = Volley.newRequestQueue(CheckInHistoryActivity.this);
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(

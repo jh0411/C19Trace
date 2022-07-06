@@ -41,14 +41,9 @@ import java.util.Map;
 
 public class CheckInFragment extends Fragment {
 
-    ActivityMainBinding binding;
-
-    //    private MainViewModel mainViewModel;
-    private RecyclerView recyclerView;
     Button button;
     TextView link;
     ArrayList<HistoryClass> checkInArrayList;
-    HistoryAdapter historyAdapter;
 
     FirebaseDatabase mDatabase;
     DatabaseReference databaseReference;
@@ -67,14 +62,6 @@ public class CheckInFragment extends Fragment {
     @Override
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-//        view.findViewById(R.id.iv_checkInNotifications).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Fragment next_fragment = new NotificationFragment();
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, next_fragment).commit();
-//            }
-//        });
 
         button = view.findViewById(R.id.btn_checkIn);
         link = view.findViewById(R.id.tv_checkHistoryLink);
@@ -120,19 +107,14 @@ public class CheckInFragment extends Fragment {
                     Log.e("Scan", "Scanned");
                     Toast.makeText(getActivity(), "Scanned!", Toast.LENGTH_SHORT).show();
 
-                    //Get the information string from the QR scan
                     String scan_location = result.getContents();
                     String current_date = java.time.LocalDate.now().toString();
                     String current_time = java.time.LocalTime.now().truncatedTo(ChronoUnit.SECONDS).toString();
 
-                    //Post a new json object to the MockAPI using volley
                     HistoryClass history = new HistoryClass(scan_location, current_date, current_time);
                     saveHistory(scan_location, current_date, current_time);
 
-                    //Add a new history to the check in history list
                     checkInArrayList.add(history);
-
-
 
                     Intent intent = new Intent(getActivity(), CheckInSuccessActivity.class);
                     intent.putExtra("Location", scan_location);
@@ -143,10 +125,8 @@ public class CheckInFragment extends Fragment {
             });
 
     private void saveHistory(String scan_location, String current_date, String current_time){
-        //declare a new variable for the request queue
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
 
-        //url to post out data
         String url = "https://62bb32877bdbe01d52998dd7.mockapi.io/History/checkIn";
 
         StringRequest request = new StringRequest(
@@ -169,14 +149,12 @@ public class CheckInFragment extends Fragment {
                         //method to handle error
                         Toast.makeText(getActivity(), "failed to get response" + error, Toast.LENGTH_SHORT).show();
                     }
-                }){ //Body of the POST Request
+                }){
 
             @Override
             protected Map<String, String> getParams(){
-                //below we are creating a hash map for storing the values in key and value pairs
                 Map<String, String> params = new HashMap<String, String>();
 
-                //below we are passing the key and value pair to the parameters
                 params.put("location", scan_location);
                 params.put("date", current_date);
                 params.put("time", current_time);
@@ -185,7 +163,6 @@ public class CheckInFragment extends Fragment {
             }
         };
 
-        //add json object request
         requestQueue.add(request);
     }
 }

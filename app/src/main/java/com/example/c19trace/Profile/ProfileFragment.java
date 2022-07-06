@@ -96,8 +96,8 @@ public class ProfileFragment extends Fragment {
                     String user_name = snapShot.child(currentUserID).child("name").getValue(String.class);
                     String user_mail = snapShot.child(currentUserID).child("email").getValue(String.class);
                     String user_number = snapShot.child(currentUserID).child("phoneNumber").getValue(String.class);
-                    String user_risk = snapShot.child(currentUserID).child("Risk Status").getValue(String.class);
-                    String user_vacc = snapShot.child(currentUserID).child("Vaccination Status").getValue(String.class);
+                    String user_risk = snapShot.child(currentUserID).child("riskStatus").getValue(String.class);
+                    String user_vacc = snapShot.child(currentUserID).child("vaccinationStatus").getValue(String.class);
 
                     profileName.setText(user_name);
                     profileEmail.setText(user_mail);

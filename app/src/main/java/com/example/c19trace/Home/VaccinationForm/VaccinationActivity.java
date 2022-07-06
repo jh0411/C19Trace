@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.c19trace.CheckIn.CheckInFragment;
 import com.example.c19trace.CheckIn.CheckInHistoryActivity;
 import com.example.c19trace.Home.HomeFragment;
+import com.example.c19trace.Others.NavigationActivity;
 import com.example.c19trace.Others.SignUpActivity;
 import com.example.c19trace.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -114,7 +115,7 @@ public class VaccinationActivity extends AppCompatActivity implements AdapterVie
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VaccinationActivity.this, CheckInFragment.class);
+                Intent intent = new Intent(VaccinationActivity.this, NavigationActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 finish();
             }
