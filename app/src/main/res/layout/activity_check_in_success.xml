@@ -127,7 +127,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmsans_bold"
-        android:text="Medium risk"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:layout_marginTop="5dp"
@@ -160,11 +159,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmsans_bold"
-        android:text="Not vaccinated"
         android:textColor="@color/black"
         android:layout_marginTop="5dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_vaccStatusBox"
-        app:layout_constraintStart_toEndOf="@+id/iv_riskStatusBox"
+        app:layout_constraintStart_toStartOf="@id/iv_vaccStatusBox"
         app:layout_constraintTop_toBottomOf="@+id/iv_vaccStatusIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
