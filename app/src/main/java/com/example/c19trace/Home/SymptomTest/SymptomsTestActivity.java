@@ -103,17 +103,17 @@ public class SymptomsTestActivity extends AppCompatActivity {
         if(symptoms >= 4){
             Intent intent = new Intent(SymptomsTestActivity.this, HighRiskActivity.class);
             startActivity(intent);
-            databaseReference.child(user).child("Risk Status").setValue("High Risk");
+            databaseReference.child(user).child("riskStatus").setValue("High Risk");
 
         } else if(symptoms == 0){
             Intent intent = new Intent(SymptomsTestActivity.this, LowRiskActivity.class);
             startActivity(intent);
-            databaseReference.child(user).child("Risk Status").setValue("Low Risk");
+            databaseReference.child(user).child("riskStatus").setValue("Low Risk");
 
         } else{
             Intent intent = new Intent(SymptomsTestActivity.this, MediumRiskActivity.class);
             startActivity(intent);
-            databaseReference.child(user).child("Risk Status").setValue("Medium Risk");
+            databaseReference.child(user).child("riskStatus").setValue("Medium Risk");
 
         }
     }
