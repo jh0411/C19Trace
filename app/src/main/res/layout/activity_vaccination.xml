@@ -356,7 +356,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/iv_vaccinationWhiteBox"
             app:layout_constraintTop_toBottomOf="@id/vaccCheckBox3"
             />
 
