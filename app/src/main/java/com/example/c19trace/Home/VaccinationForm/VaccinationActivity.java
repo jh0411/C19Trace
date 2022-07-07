@@ -96,7 +96,7 @@ public class VaccinationActivity extends AppCompatActivity implements AdapterVie
                     if (q1 == noAns || q2 == noAns || q3 == noAns || q4 == noAns || q5 == noAns) {
                         Toast.makeText(VaccinationActivity.this, "Please select an answer for all the questions.", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(VaccinationActivity.this, "Form submitted successfully. Please wait patiently until we schedule a vaccination appointment for you", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VaccinationActivity.this, "Form submitted successfully! We'll get back to you soon.", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(VaccinationActivity.this, HomeFragment.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

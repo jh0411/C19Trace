@@ -86,6 +86,8 @@ public class ChangePassword extends Fragment {
                                 }
                             });
                         }
+                    } else{
+                        Toast.makeText(getActivity(), "Password do not match, please try again!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
