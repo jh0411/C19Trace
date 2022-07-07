@@ -26,18 +26,20 @@
             android:id="@+id/iv_vaccinationPic"
             android:layout_width="326dp"
             android:layout_height="246dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/vaccination_pic"
+            app:layout_constraintBottom_toTopOf="@id/btn_readVaccine"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="40dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_readVaccine"
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/custom_input"
             android:fontFamily="@font/dmsans_bold"
             android:text="Read more on vaccines!"
@@ -46,7 +48,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_vaccinationPic" />
+            app:layout_constraintBottom_toTopOf="@id/iv_vaccinationWhiteBox" />
 
         <ImageView
             android:id="@+id/iv_vaccinationWhiteBox"
@@ -57,7 +59,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_readVaccine" />
+            />
 
         <TextView
             android:id="@+id/tv_covidNews"
@@ -353,8 +355,8 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/iv_vaccinationWhiteBox"
+            app:layout_constraintEnd_toEndOf="@id/iv_vaccinationWhiteBox"
             app:layout_constraintTop_toBottomOf="@id/vaccCheckBox3"
             />
 
