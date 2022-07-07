@@ -40,6 +40,9 @@ public class ProfileFragment extends Fragment {
     TextView profileName, profileNumber, profileEmail, riskStatus, vaccStatus;
     CircleImageView profileImage;
 
+    private FirebaseAuth mAuth;
+
+
     public ProfileFragment() {
         // Required empty public constructor
     }

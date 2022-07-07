@@ -70,6 +70,8 @@ public class EditProfile extends Fragment {
     Button saveChanges;
     ActivityResultLauncher<Intent> intentActivityResultLauncher;
 
+    private FirebaseAuth mAuth;
+
     ArrayAdapter<String> adapter;
 
     DatePickerDialog.OnDateSetListener setListener;
